@@ -24,7 +24,8 @@ const StyledGrid = styled.div`
 	gap: 20px;
 
 	a > img {
-		max-height: 300px;
-		/* object-fit: cover; */
+		/* max-height: 300px; */
+		max-width: 100%;
+		object-fit: cover;
 	}
 `

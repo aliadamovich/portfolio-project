@@ -19,7 +19,13 @@ export const Header = () => {
 }
 
 const StyledHeader = styled.header`
+	background-color: rgb(245, 245, 245);
+	position: fixed;
+	top: 0;
+	right: 0;
+	max-width: 108px;
+	height: 100vh;
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	flex-direction: column;
+	justify-content: space-around;
 `

@@ -22,7 +22,11 @@ export const Nav = (props: { menuIcons: Array<string>}) => {
 const StyledMenu = styled.nav`
 
 ul {
+	list-style: none;
 	display: flex;
+	flex-direction: column;
+	align-items: center;
 	gap: 43px;
+	padding: 0;
 }
 `
