@@ -1,7 +1,7 @@
 import React from 'react'
-import { SectionTitle } from '../../../../components/SectionTitle'
-import { SectionDescription } from '../../../../components/SectionDescription'
-import { Slider } from './slider/Slider'
+import { SectionTitle } from '../../../components/SectionTitle'
+import { SectionDescription } from '../../../components/SectionDescription'
+import { Slider } from '../../../components/slider/Slider'
 
 export function Recomendations() {
 	return (

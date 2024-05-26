@@ -9,8 +9,8 @@ export const Extra = (props: {extra: Array<string>} ) => {
 			<SidebarTitle>Extra Skills</SidebarTitle>
 			<ExtraList>
 				{
-					props.extra.map(el => {
-						return <li>
+					props.extra.map((el, index) => {
+						return <li key={index}>
 										<Icon iconId='monitors' width='15' height='15' viewBox='0 0 15 15'></Icon>
 										<span>{el}</span>
 									</li>

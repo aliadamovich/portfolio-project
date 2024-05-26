@@ -1,0 +1,29 @@
+import React from 'react'
+import { Icon } from '../../../components/icon/Icon'
+import styled from 'styled-components'
+import { FlexWrapper } from '../../../components/FlexWrapper'
+
+export function Footer() {
+	return (
+		<StyledFooter>
+			<FlexWrapper justify='space-between'>
+				<Icon iconId='g-1' width="128" height="89" viewBox="0 0 128 89"/>
+				<Icon iconId='g-2' width="124" height="102" viewBox="0 0 124 102" />
+				<Icon iconId='g-3' width="134" height="84" viewBox="0 0 134 84" />
+				<Icon iconId='g-4' width="128" height="94" viewBox="0 0 128 94" />
+			</FlexWrapper>
+			<Copyright>
+				<Icon iconId='copyright' width='24' height='24' viewBox='0 0 24 24'/>
+				<Small>2021 All Rights Reserved.Ojjomedia</Small>
+			</Copyright>
+		</StyledFooter>
+	)
+}
+
+const StyledFooter = styled.footer`
+`
+const Copyright = styled.div`
+text-align: center;
+`
+const Small = styled.small`
+`

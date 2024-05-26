@@ -1,5 +1,5 @@
 import React from 'react'
-import { Icon } from '../../../../../../components/icon/Icon'
+import { Icon } from '../../icon/Icon'
 import styled from 'styled-components'
 
 type SlidePropsType = {
@@ -13,7 +13,7 @@ type SlidePropsType = {
 
 export function Slide(props: SlidePropsType) {
 	return (
-		<SliderBody>
+		<SlideBody>
 			<Icon iconId='star' width='18' height='18' viewBox='0 0 18 18' />
 			<Title>{props.title}</Title>
 			<Review>{props.review}</Review>
@@ -22,11 +22,11 @@ export function Slide(props: SlidePropsType) {
 				<span>{props.name}</span>
 				<span>{props.job}</span>
 			</Person>
-		</SliderBody> 
+		</SlideBody> 
 	)
 }
 
-const SliderBody = styled.div`
+const SlideBody = styled.div`
 `
 const Title = styled.h3`
 `

@@ -27,6 +27,7 @@ export const Info = () => {
 const StyledInfo = styled.div`
 	img {
 		width: 100%;
+		border-radius: 50%;
 	}
 `
 

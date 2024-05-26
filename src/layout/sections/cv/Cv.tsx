@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { Extra } from './extra/Extra'
 import { Info } from './info/Info'
 import { Icon } from '../../../components/icon/Icon'
+import { Button } from '../../../components/button/Button'
 
 
 
@@ -21,10 +22,8 @@ export const Cv = () => {
 					<Progress title='Skills' knowledge={skills}/>
 				</div>
 				<Extra extra={extra}/>
-				<button>
-					download cv
-					<Icon iconId='download' width='12' height='12' viewBox='0 0 12 12'/>
-				</button>
+			<Button text='download cv'/>
+
 		</StyledCv>
 	)
 }
@@ -35,6 +34,7 @@ const StyledCv = styled.div`
 	height: 100vh;
 	top: 0;
 	left: 0;
+	padding-left: 20px;
 `
 
 // const ProgressContainer = styled.div`

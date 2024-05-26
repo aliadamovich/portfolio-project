@@ -1,6 +1,7 @@
 import React from 'react'
 import { Icon } from '../../../../components/icon/Icon'
 import styled from 'styled-components'
+import { Button } from '../../../../components/button/Button'
 
 type ServiceCardPropsType = {
 	iconId: string
@@ -14,7 +15,7 @@ export const ServiceCard = (props: ServiceCardPropsType) => {
 			<Icon iconId={props.iconId} />
 			<ServiceName>{props.name}</ServiceName>
 			<ServiceDescription>{props.description}</ServiceDescription>
-			<a href="#">order now</a>
+			<Button text='order now' />
 		</CardBody>
 	)
 }

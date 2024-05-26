@@ -6,8 +6,8 @@ export const Nav = (props: { menuIcons: Array<string>}) => {
 		<StyledMenu>
 			<ul>
 				{
-					props.menuIcons.map(el=> {
-					return <li>
+					props.menuIcons.map((el, index)=> {
+					return <li key={index}>
 									<a href="">
 										<Icon iconId={el} width="18" height="18" viewBox="0 0 18 18"/>
 									</a>

@@ -6,27 +6,26 @@ type PriceCardPropsType = {
 	rate: string
 	price: string
 	descriprtion: string
+	options: {option: string, isActive: boolean}[]
 }
 
 export const PriceCard = (props: PriceCardPropsType) => {
-const options = 
-['UI design', 'Web Development', 'Logo Design', 'Seo Optimization', '5 Websites', 'Unlimited User', '20 GB Bandwith']
 
 	return (
 		<StyledCard>
 			<h3>{props.rate}</h3>
 			<span>{props.price} <span>/Hour</span></span>
 			<p>{props.descriprtion}</p>
-			<Content >
+			<StyledList >
 				{
-				options.map(o => {
-					return <li>
-										<Icon iconId='check' width='24' height='24' viewBox='0 0 24 24'/>
-										<span>{o}</span>
-								</li>
-
-				})}
-			</Content>
+					props.options.map((o, index) => {	
+						return <li key={index}>
+										{o.isActive ? <Icon iconId='check' width='24' height='24' viewBox='0 0 24 24' /> 
+										: <Icon iconId='close' width='24' height='24' viewBox='0 0 24 24' />}
+										<span>{o.option}</span>
+									</li>
+					})}
+			</StyledList>
 		</StyledCard>
 	)
 }
@@ -38,6 +37,6 @@ box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
 
 `
 
-const Content = styled.ul`
+const StyledList = styled.ul`
 	list-style: none;
 `

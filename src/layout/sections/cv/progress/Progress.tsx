@@ -14,8 +14,8 @@ export const Progress = (props: ProgressPropsType) => {
 			<SidebarTitle>{props.title}</SidebarTitle>
 
 			{
-				props.knowledge.map(l => {
-					return <div>
+				props.knowledge.map((l, index) => {
+					return <div key={index}>
 									<label htmlFor={l.skill}>{l.skill}
 										<span>{l.value}%</span>
 									</label>
