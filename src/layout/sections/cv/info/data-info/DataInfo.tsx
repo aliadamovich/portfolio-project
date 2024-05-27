@@ -2,7 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import { Label } from '../../../../../components/Label'
 
-export const DataInfo = (props: { data: Record<string, any>[] }) => {
+
+
+export const DataInfo = (props: { data: { name: string, value: string }[] }) => {
 	return (
 		<div>
 			{

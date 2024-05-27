@@ -2,10 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Icon } from '../../../../../components/icon/Icon'
 
-// type Option = {
-// 	name: string;
-// 	value: string;
-// };
+
 
 type ContactCardProps = {
 	options: { name: string; value: string }[]

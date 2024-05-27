@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { SidebarTitle } from '../SidebarTitle'
 
 type ProgressPropsType = {
-	knowledge: Record<string, any>[]
+	knowledge: {skill: string, value: string}[]
 	title: string
 }
 
@@ -37,7 +37,6 @@ const ProgressBar = styled.progress`
 	height: 6px;
 	border: 1px solid #ffb400;
 	padding: 1px;
-	/* margin-top: 10px; */
 	background-color: #fff;
 
 	&::-webkit-progress-bar{

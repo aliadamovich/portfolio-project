@@ -37,7 +37,7 @@ function App() {
 
 export default App;
 
-const MainContainer = styled.main`
+const MainContainer = styled.div`
 	max-width: 970px;
 	margin-left: 335px;
 	background: rgb(245, 245, 245);

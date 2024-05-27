@@ -27,5 +27,4 @@ const StyledHeader = styled.header`
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
 `

@@ -10,7 +10,7 @@ export const PortfolioGrid = (props: { gridImages: Array<string> } ) => {
 		<StyledGrid>
 			{props.gridImages.map((i, index) => {
 				return <a key={index} href="#">
-									<img src={i} alt="" />
+									<img src={i} alt="portfolio project" />
 							</a>
 			}
 			)}

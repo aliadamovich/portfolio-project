@@ -6,38 +6,55 @@ import { FlexWrapper } from '../../../components/FlexWrapper'
 import { PriceCard } from './price-card/PriceCard'
 
 export const Price = () => {
-	const silverOptions = [
-			{option: 'UI design', isActive: true}, 
-			{option: 'Web Development', isActive: true },
-			{option: 'Logo Design', isActive: false },
-			{option: 'Seo Optimization', isActive: false },
-			{option: 'WordPress integration', isActive: false},
-			{option: '5 Websites', isActive: false},
-			{option: 'Unlimited User', isActive: false},
-			{option: '20 GB Bandwith', isActive: false}
-		]
-	const goldOptions = [
-		{ option: 'UI design', isActive: true },
-		{ option: 'Web Development', isActive: true },
-		{ option: 'Logo Design', isActive: true },
-		{ option: 'Seo Optimization', isActive: true },
-		{ option: 'WordPress integration', isActive: false },
-		{ option: '5 Websites', isActive: false },
-		{ option: 'Unlimited User', isActive: false },
-		{ option: '20 GB Bandwith', isActive: false }
-	]
-	const diamondOptions = [
-		{ option: 'UI design', isActive: true },
-		{ option: 'Web Development', isActive: true },
-		{ option: 'Logo Design', isActive: true },
-		{ option: 'Seo Optimization', isActive: true },
-		{ option: 'WordPress integration', isActive: true },
-		{ option: '5 Websites', isActive: true },
-		{ option: 'Unlimited User', isActive: true },
-		{ option: '20 GB Bandwith', isActive: true }
-	]
 
-
+	const data = [
+		{
+			rate: 'Silver',
+			price: '$0.00',
+			description: 'For most businesses that want to optimize web queries',
+			options: [
+				{ title: 'UI design', isActive: true },
+				{ title: 'Web Development', isActive: true },
+				{ title: 'Logo Design', isActive: false },
+				{ title: 'Seo Optimization', isActive: false },
+				{ title: 'WordPress integration', isActive: false },
+				{ title: '5 Websites', isActive: false },
+				{ title: 'Unlimited User', isActive: false },
+				{ title: '20 GB Bandwith', isActive: false }
+			]
+		},
+		{
+			rate: 'Gold',
+			price: '$50.00',
+			description: 'For most businesses that want to optimize web queries',
+			options: [
+				{ title: 'UI design', isActive: true },
+				{ title: 'Web Development', isActive: true },
+				{ title: 'Logo Design', isActive: true },
+				{ title: 'Seo Optimization', isActive: true },
+				{ title: 'WordPress integration', isActive: false },
+				{ title: '5 Websites', isActive: false },
+				{ title: 'Unlimited User', isActive: false },
+				{ title: '20 GB Bandwith', isActive: false }
+			],
+			popular: true
+},
+		{
+			rate: 'Diamond',
+			price: '$80.00',
+			description: 'For most businesses that want to optimize web queries',
+			options: [
+				{ title: 'UI design', isActive: true },
+				{ title: 'Web Development', isActive: true },
+				{ title: 'Logo Design', isActive: true },
+				{ title: 'Seo Optimization', isActive: true },
+				{ title: 'WordPress integration', isActive: true },
+				{ title: '5 Websites', isActive: true },
+				{ title: 'Unlimited User', isActive: true },
+				{ title: '20 GB Bandwith', isActive: true }
+			]
+}
+	]
 
 	return (
 		<StyledPriceSection>
@@ -45,13 +62,12 @@ export const Price = () => {
 			<SectionDescription>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum</SectionDescription>
 			<FlexWrapper justify='space-around'>
 
-				<PriceCard options={silverOptions} rate='Silver' price='$0.00' descriprtion='For most businesses that want to
-					optimize web queries'/>
-				<PriceCard options={goldOptions} rate='Gold' price='$50.00' descriprtion='For most businesses that want to
-					optimize web queries'/>
-				<PriceCard options={diamondOptions} rate='Diamond' price='$80.00' descriprtion='For most businesses that want to
-					optimize web queries'/>
-					
+			{data.map(el => {
+				return <PriceCard options={el.options} rate={el.rate} price={el.price}
+					description={el.description}
+					isPopular={el.popular}/>
+			})}
+
 			</FlexWrapper>
 		</StyledPriceSection>
 	)

@@ -10,7 +10,7 @@ export const Info = () => {
 	const data = [
 		{ name: 'Age', value: '24' }, 
 		{ name: 'Residence', value: 'BD'}, 
-		{name: 'Freelance', value: 'Available'},
+		{ name: 'Freelance', value: 'Available'},
 		{ name: 'Address', value: 'Dhaka,Bangladesh'} 
 	]
 
@@ -24,6 +24,7 @@ export const Info = () => {
 		</StyledInfo>
 	)
 }
+
 const StyledInfo = styled.div`
 	img {
 		width: 100%;
