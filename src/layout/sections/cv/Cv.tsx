@@ -5,6 +5,8 @@ import { Extra } from './extra/Extra'
 import { Info } from './info/Info'
 import { Icon } from '../../../components/icon/Icon'
 import { Button } from '../../../components/button/Button'
+import { theme } from '../../../styles/Theme'
+import { CvContainer } from './CvContainer'
 
 
 
@@ -17,26 +19,22 @@ export const Cv = () => {
 	return (
 			<StyledCv>
 				<Info />
-				<div>
-					<Progress title='Languages' knowledge={languages}/>
-					<Progress title='Skills' knowledge={skills}/>
-				</div>
+				<Progress title='Languages' knowledge={languages}/>
+				<Progress title='Skills' knowledge={skills}/>
 				<Extra extra={extra}/>
-			<Button text='download cv'/>
+				<CvContainer><Button text='download cv'/></CvContainer>
 
 		</StyledCv>
 	)
 }
 
-const StyledCv = styled.div`
+const StyledCv = styled.aside`
 	max-width: 305px;
+	width: 100%;
 	position: absolute;
-	height: 100vh;
+	/* height: 100%; */
 	top: 0;
 	left: 0;
-	padding-left: 20px;
+	padding: 50px 45px 0px 40px;
+	background-color: ${theme.colors.sectionsBg};
 `
-
-// const ProgressContainer = styled.div`
-// 	margin: 40px 0 0 40px;
-// `

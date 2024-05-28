@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { SidebarTitle } from '../SidebarTitle'
+import { theme } from '../../../../styles/Theme'
+import { CvContainer } from '../CvContainer'
 
 type ProgressPropsType = {
 	knowledge: {skill: string, value: string}[]
@@ -10,24 +12,36 @@ type ProgressPropsType = {
 
 export const Progress = (props: ProgressPropsType) => {
 	return (
-		<ProgressContainer>
+		<CvContainer>
 			<SidebarTitle>{props.title}</SidebarTitle>
 
 			{
 				props.knowledge.map((l, index) => {
-					return <div key={index}>
-									<label htmlFor={l.skill}>{l.skill}
-										<span>{l.value}%</span>
-									</label>
-									<ProgressBar id={l.value} value={l.value} max='100'/>
-								</div>
+					return <ProgressBarContainer key={index}>
+						<label htmlFor={l.skill}>
+							<span>{l.skill}</span>
+							<span>{l.value}%</span>
+						</label>
+						<ProgressBar id={l.value} value={l.value} max='100' />
+					</ProgressBarContainer>
 				})
 			}
-			
-		</ProgressContainer>
+
+		</CvContainer>
 	)
 }
 
+const ProgressBarContainer = styled.div`
+	&:not(:last-child){
+		margin-bottom: 10px;
+	}
+
+	label {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 5px;
+	}
+`
 
 const ProgressBar = styled.progress`
 	box-sizing: border-box;
@@ -35,31 +49,22 @@ const ProgressBar = styled.progress`
 	border-radius: 4px;
 	width: 220px;
 	height: 6px;
-	border: 1px solid #ffb400;
+	border: 1px solid ${theme.colors.accent};
 	padding: 1px;
-	background-color: #fff;
+	background-color: ${theme.colors.sectionsBg};
 
 	&::-webkit-progress-bar{
 		background-color: #ffffff;
 		border-radius: 6px;
 	}
 	&::-webkit-progress-value {
-		background-color: #ffb400;
+		background-color: ${theme.colors.accent};
 		border-radius: 6px;
 	}
 
 	&::-moz-progress-bar {
-		background-color: #ffb400;
+		background-color: ${theme.colors.accent};
 		border-radius: 6px;
 	}
-
-`
-
-
-const ProgressContainer = styled.div`
-	margin-bottom: 50px;
-`
-
-const ProgressTitle = styled.h3`
 
 `

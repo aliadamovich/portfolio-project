@@ -12,6 +12,7 @@ import { Work } from './layout/work/Work';
 import { Contact } from './layout/sections/contact/Contact';
 import {Footer} from './layout/sections/footer/Footer';
 import { Blog } from './layout/sections/blog/Blog';
+import { Container } from './components/Container';
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
 			<div className='App'>
 				<Header />
 				<Cv />
-				<MainContainer>
+				<Container>
 					<Main />
 					<Price />
 					<Recomendations />
@@ -30,18 +31,9 @@ function App() {
 					<Blog />
 					<Contact />
 					<Footer />
-				</MainContainer>
+				</Container>
 			</div>
     );
 }
 
 export default App;
-
-const MainContainer = styled.div`
-	max-width: 970px;
-	margin-left: 335px;
-	background: rgb(245, 245, 245);
-	>*:not(:last-child) {
-		margin-bottom: 120px;
-	}
-`

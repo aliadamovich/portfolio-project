@@ -2,25 +2,25 @@ import React from 'react'
 import styled from 'styled-components'
 import { Icon } from '../../../../components/icon/Icon'
 import { SidebarTitle } from '../SidebarTitle'
+import { CvContainer } from '../CvContainer'
 
 export const Extra = (props: {extra: Array<string>} ) => {
 	return (
-		<div>
+		<CvContainer>
 			<SidebarTitle>Extra Skills</SidebarTitle>
 			<ExtraList>
 				{
 					props.extra.map((el, index) => {
 						return <li key={index}>
-										<Icon iconId='monitors' width='15' height='15' viewBox='0 0 15 15'></Icon>
-										<span>{el}</span>
+											<Icon iconId='monitors' width='15' height='15' viewBox='0 0 15 15' fill='none'></Icon>
+											<span>{el}</span>
 									</li>
-
 					})
 				}
 
 			</ExtraList>
 			
-		</div>
+		</CvContainer>
 	)
 }
 
@@ -29,6 +29,6 @@ const ExtraList = styled.ul`
 	list-style: none;
 	li>span{
 
-		margin-left: 5px;
+		margin-left: 15px;
 	}
 `

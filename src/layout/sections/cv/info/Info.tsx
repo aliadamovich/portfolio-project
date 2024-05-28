@@ -4,33 +4,63 @@ import { SidebarTitle } from '../SidebarTitle'
 import styled from 'styled-components'
 import { IconsRow } from './icons-row/IconsRow'
 import { DataInfo } from './data-info/DataInfo'
+import { theme } from '../../../../styles/Theme'
+import { Cv } from '../Cv'
+import { CvContainer } from '../CvContainer'
 
 export const Info = () => {
 	const icons = ['facebook', 'instagram', 'twitter', 'linkedin', 'youtube', 'dribble'];
 	const data = [
-		{ name: 'Age', value: '24' }, 
-		{ name: 'Residence', value: 'BD'}, 
-		{ name: 'Freelance', value: 'Available'},
-		{ name: 'Address', value: 'Dhaka,Bangladesh'} 
+		{ name: 'Age:', value: '24' }, 
+		{ name: 'Residence:', value: 'BD'}, 
+		{ name: 'Freelance:', value: 'Available', modified: true},
+		{ name: 'Address:', value: 'Dhaka,Bangladesh'} 
 	]
 
 	return (
 		<StyledInfo>
-			<img src={mini} alt="hero photo" />
-			<SidebarTitle>Rayan Adlrdard</SidebarTitle>
-			<Position>Font-end Developer</Position>
+			<StyledPhoto><img src={mini} alt="hero photo" /></StyledPhoto>
+			<SidebarTitle centered>Rayan Adlrdard</SidebarTitle>
+			<Position>Front-end Developer</Position>
 			<IconsRow icons={icons}/>
-			<DataInfo data={data}/> 
+			<CvContainer>
+				<DataInfo data={data}/> 
+			</CvContainer>
 		</StyledInfo>
 	)
 }
 
 const StyledInfo = styled.div`
+	
+`
+
+const StyledPhoto = styled.div`
+	position: relative;
+	width: 150px;
+	height: 150px;
+	border: 1px dashed #cdcccc;
+	margin: 0px auto 30px auto;
+	&::after{
+	content: '';
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		bottom: 10%;
+		right: 10%;
+		border-radius: 50%;
+		background-color: rgb(126, 185, 66);
+		box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
+	}
 	img {
 		width: 100%;
+		height: 100%;
+		object-fit: cover;
 		border-radius: 50%;
 	}
 `
 
-const Position = styled.h4`
+const Position = styled.span`
+	display: block;
+	text-align: center;
+	margin-bottom: 15px;
 `

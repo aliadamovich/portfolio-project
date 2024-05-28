@@ -1,7 +1,12 @@
 import styled from "styled-components";
+import { theme } from "../styles/Theme";
 
-export const Label = styled.span`
-display: inline-block;
-background: rgb(255, 180, 0);
-padding: 5px;
+type LabelPropsType = {
+	color?: string
+}
+
+export const Label = styled.span<LabelPropsType>`
+	background-color: ${theme.colors.accent};
+	color: ${props => props.color || theme.colors.boldFont};
+	padding: 0px 6px;
 `

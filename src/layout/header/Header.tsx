@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Nav } from "../../components/nav/Nav";
 import { Icon } from "../../components/icon/Icon";
+import { theme } from "../../styles/Theme";
 
 export const Header = () => {
 
@@ -10,7 +11,7 @@ export const Header = () => {
 		<StyledHeader>
 
 			<button>
-				<Icon iconId="moon" width="30" height="30" viewBox="0 0 30 30" />
+				<Icon iconId="moon" width="30" height="30" viewBox="0 0 30 30" fill={theme.colors.boldFont}/>
 			</button>
 			<Nav menuIcons={icons}/>
 
@@ -19,12 +20,14 @@ export const Header = () => {
 }
 
 const StyledHeader = styled.header`
-	background-color: rgb(245, 245, 245);
 	position: fixed;
 	top: 0;
 	right: 0;
-	max-width: 108px;
+	min-width: 86px;
 	height: 100vh;
+	padding: 48px 5px;
 	display: flex;
 	flex-direction: column;
+	gap: 208px;
+	background-color: ${theme.colors.headerBg};
 `
