@@ -1,6 +1,9 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Icon } from '../../../../components/icon/Icon'
+import { theme } from '../../../../styles/Theme'
+import { Label } from '../../../../components/Label'
+import { Button } from '../../../../components/button/Button'
 
 // type OptionType = {
 // 	title: string,
@@ -19,36 +22,106 @@ type PriceCardPropsType = {
 	isPopular?: boolean
 }
 
+type PopularLabelPropsType = {
+	opacity?: string
+}
+
 export const PriceCard = (props: PriceCardPropsType) => {
 
 	return (
 		<StyledCard>
-			{props.isPopular && <span>Most Popular</span> }
+			{<PopularLabel opacity={props.isPopular ? '1': '0'}>Most Popular</PopularLabel> }
 			
-			<h3>{props.rate}</h3>
-			<span>{props.price} <span>/Hour</span></span>
-			<p>{props.description}</p>
+			<CardName>{props.rate}</CardName>
+			<Price>{props.price} <span>/Hour</span></Price>
+			<Descriptopn>{props.description}</Descriptopn>
 			<StyledList >
 				{
 					props.options.map((o, index) => {	
-						return <li key={index}>
-										{o.isActive ? <Icon iconId='check' width='24' height='24' viewBox='0 0 24 24' /> 
-										: <Icon iconId='close' width='24' height='24' viewBox='0 0 24 24' />}
-										<span>{o.title}</span>
-									</li>
+						return <OptionsList key={index}>
+											{o.isActive ?
+												<Icon iconId='check' width='24' height='24' viewBox='0 0 24 24' 
+												fill={theme.colors.accent}/> 
+											:
+											<Icon iconId='close' width='24' height='24' viewBox='0 0 24 24' 
+											fill={theme.colors.mainFont}/>
+											}
+											<PlanTitle color={o.isActive ? theme.colors.boldFont
+												: theme.colors.mainFont}>{o.title}
+											</PlanTitle>
+										</OptionsList>
 					})}
 			</StyledList>
+			<Button text='order now' />
 		</StyledCard>
 	)
 }
 
 const StyledCard = styled.div`
+position: relative;
 background: #fff;
-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
-
-
+padding: 54px 30px;
+transition: all 0.3s ease 0s;
+&:hover{
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+}
 `
 
+const CardName = styled.h3`
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 124%;
+	text-transform: capitalize;
+	color: ${theme.colors.boldFont};
+	text-align: center;
+`
+
+const Price = styled.div`
+	font-size: 32px;
+	font-weight: 700;
+	line-height: 123.6%;
+	text-transform: capitalize;
+	color: ${theme.colors.boldFont};
+	margin: 19px 0 8px 0;
+	text-align: center;
+
+	span{
+		font-size: 15px;
+		line-height: 24px;
+		color: ${theme.colors.mainFont};
+	}
+`
+const Descriptopn = styled.p`
+	text-align: center;
+	margin-bottom: 21px;
+`
 const StyledList = styled.ul`
 	list-style: none;
+	margin-bottom: 20px;
+`
+const OptionsList = styled.li`
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	&:not(:last-child){
+		margin-bottom: 17px;
+	}
+`
+type PlanTitlePropsType = {
+color: string
+}
+const PlanTitle = styled.span<PlanTitlePropsType>`
+	color: ${props => props.color};
+`
+
+const PopularLabel = styled.span<PopularLabelPropsType>`
+	background-color: ${theme.colors.accent};
+	color: ${theme.colors.boldFont};
+	opacity: ${props => props.opacity};
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	padding: 3px;
 `

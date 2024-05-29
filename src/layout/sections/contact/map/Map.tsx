@@ -12,4 +12,8 @@ export function Map() {
 
 const StyledMap = styled.div`
 	grid-column-start: span 2;
+	img {
+		width: 100%;
+	
+	}
 `

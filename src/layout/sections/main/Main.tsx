@@ -14,7 +14,7 @@ export const Main = () => {
 					<MainText>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat feugiat placerat lobortis. Natoque rutrum semper sed suspendisse nunc lectus.</MainText>
 					<Button text='HIRE ME' />
 				</MainContent>
-				<img src={hero} alt="main photo" />
+				<MainImgWrapper><img src={hero} alt="main photo" /></MainImgWrapper>
 			</FlexWrapper>
 		</MainSection>
 	)
@@ -44,4 +44,11 @@ const MainText = styled.p`
 	font-size: 16px;
 	margin: 18px 0 25px 0;
 	max-width: 450px;
+`
+
+const MainImgWrapper = styled.div`
+	img {
+		width: 100%;
+		object-fit: cover;
+	}
 `

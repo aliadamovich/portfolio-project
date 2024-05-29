@@ -60,7 +60,7 @@ export const Price = () => {
 		<StyledPriceSection>
 			<SectionTitle>price plans</SectionTitle>
 			<SectionDescription>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum</SectionDescription>
-			<FlexWrapper justify='space-around'>
+			<FlexWrapper justify='space-around' gap='20px'>
 
 			{data.map(el => {
 				return <PriceCard options={el.options} rate={el.rate} price={el.price}

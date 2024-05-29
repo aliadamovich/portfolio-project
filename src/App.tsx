@@ -22,11 +22,11 @@ function App() {
 				<Cv />
 				<Container>
 					<Main />
+					<Services />
 					<Price />
 					<Recomendations />
 					<Education />
 					<Work />
-					<Services />
 					<Portfolio />
 					<Blog />
 					<Contact />

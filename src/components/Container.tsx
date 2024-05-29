@@ -5,9 +5,7 @@ export const Container = styled.div`
 	width: 100%;
 	min-height: 100%;
 	padding: 0 15px;
-	margin-left: 335px;
+	margin: 0 86px 0 335px;
 	background: rgb(245, 245, 245);
-	>*:not(:last-child) {
-		margin-bottom: 120px;
-	}
+
 `
