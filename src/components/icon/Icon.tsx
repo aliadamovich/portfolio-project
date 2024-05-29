@@ -3,7 +3,7 @@ import sprite from "../../assets/sprite/sprite.svg";
 import { theme } from "../../styles/Theme";
 
 type IconPropsType = {
-	iconId: string
+	iconId?: string
 	width?: string
 	height?: string
 	viewBox?: string
@@ -14,11 +14,15 @@ type IconPropsType = {
 
 export const Icon = (props: IconPropsType) => {
 	return(
-		<svg width={props.width || '78'} 
+		<StyledSvg width={props.width || '78'} 
 		 			height={props.height || '78'} 
 		 			viewBox={props.viewBox || "0 0 78 78"}
 					fill={props.fill || theme.colors.boldFont}>
 			<use xlinkHref={ `${sprite}#${props.iconId}` }></use>
-		</svg>
+		</StyledSvg>
 	)
 }
+
+const StyledSvg = styled.svg`
+	transition: all 0.5s ease 0s;
+`

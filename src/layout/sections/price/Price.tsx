@@ -4,6 +4,7 @@ import { SectionTitle } from '../../../components/SectionTitle'
 import { SectionDescription } from '../../../components/SectionDescription'
 import { FlexWrapper } from '../../../components/FlexWrapper'
 import { PriceCard } from './price-card/PriceCard'
+import { GridWrapper } from '../../../components/GridWrapper'
 
 export const Price = () => {
 
@@ -60,15 +61,15 @@ export const Price = () => {
 		<StyledPriceSection>
 			<SectionTitle>price plans</SectionTitle>
 			<SectionDescription>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum</SectionDescription>
-			<FlexWrapper justify='space-around' gap='20px'>
-
+			<GridWrapper >
+				
 			{data.map(el => {
 				return <PriceCard options={el.options} rate={el.rate} price={el.price}
 					description={el.description}
 					isPopular={el.popular}/>
 			})}
 
-			</FlexWrapper>
+			</GridWrapper>
 		</StyledPriceSection>
 	)
 }

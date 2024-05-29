@@ -1,13 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Icon } from '../../../../components/icon/Icon'
-import { SidebarTitle } from '../SidebarTitle'
 import { CvContainer } from '../CvContainer'
 
 export const Extra = (props: {extra: Array<string>} ) => {
 	return (
 		<CvContainer>
-			<SidebarTitle>Extra Skills</SidebarTitle>
+			<h3>Extra Skills</h3>
 			<ExtraList>
 				{
 					props.extra.map((el, index) => {

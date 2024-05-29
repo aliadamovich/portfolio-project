@@ -21,13 +21,20 @@ export const Header = () => {
 
 const StyledHeader = styled.header`
 	position: fixed;
+	z-index: 9999;
 	top: 0;
 	right: 0;
-	min-width: 86px;
-	height: 100vh;
+	width: 75px;
+	min-height: 100vh;
+	height: 100%;
 	padding: 48px 5px;
 	display: flex;
 	flex-direction: column;
 	gap: 208px;
+	overflow: auto;
 	background-color: ${theme.colors.headerBg};
+
+	@media (max-width:1024px){
+		display: none;
+	};
 `

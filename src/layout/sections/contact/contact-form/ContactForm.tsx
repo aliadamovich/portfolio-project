@@ -24,7 +24,7 @@ export function ContactForm() {
 					<label htmlFor="text">Your Message</label>
 					<textarea name="text" id="text" />
 				</StyledInput>
-				<Button text='send message'/>
+				<Button>send message</Button>
 			</Form>
 		</StyledForm>
 	)

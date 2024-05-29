@@ -37,11 +37,19 @@ export const GlobalStyles = createGlobalStyle`
 	border: none;
 	}
 
-	h1, h2, h3, h4, h5, h6 {
+	h1, h2, h4, h5, h6 {
 	font-size: inherit;
 	font-weight: 400;
 	}
-
+	h3 {
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 123%;
+		text-transform: capitalize;
+		color: ${theme.colors.boldFont};
+		margin-bottom: 15px;
+	}
+	
 	input,
 	button,
 	textarea {

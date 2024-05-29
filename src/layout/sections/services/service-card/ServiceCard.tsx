@@ -1,8 +1,8 @@
 import React from 'react'
 import { Icon } from '../../../../components/icon/Icon'
 import styled from 'styled-components'
-import { Button } from '../../../../components/button/Button'
 import { theme } from '../../../../styles/Theme'
+import { YellowLink } from '../../../../components/yellow-link/YellowLink'
 
 type ServiceCardPropsType = {
 	iconId: string
@@ -14,29 +14,47 @@ export const ServiceCard = (props: ServiceCardPropsType) => {
 	return (
 		<CardBody>
 			<Icon iconId={props.iconId} fill={theme.colors.accent}/>
-			<ServiceName>{props.name}</ServiceName>
+			<Title>{props.name}</Title>
 			<ServiceDescription>{props.description}</ServiceDescription>
-			<Button text='order now' />
+			{/* <Link href='#'>
+				<span>order now</span>
+				<Icon iconId='link-right' width="18" height="18" viewBox="0 0 18 18" fill={theme.colors.accent} />
+			</Link> */}
+			<YellowLink text='order now'/>
 		</CardBody>
 	)
 }
+
+const Title = styled.h3`
+	margin-top: 26px;
+`
+
+const ServiceDescription = styled.p`
+	font-size: 15px;
+`
 
 const CardBody = styled.div`
 	flex: 0 1 33.3%;
 	text-align: center;
 	background-color: ${theme.colors.sectionsBg};
 	padding: 25px 0 42px;
-	`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 
-const ServiceName = styled.h3`
-	font-size: 18px;
-	font-weight: 500;
-	line-height: 123.6%;
-	text-transform: capitalize;
-	color: ${theme.colors.boldFont};
-	margin-bottom: 15px;
-`
+	a {
+	opacity: 0;
+}
 
-const ServiceDescription = styled.p`
-	font-size: 15px;
+	&:hover{
+		>svg {
+			height: 0;
+		}
+		a {
+			opacity: 1;
+			&:hover{
+				opacity: 0.7;
+			}
+		}
+	}
 `

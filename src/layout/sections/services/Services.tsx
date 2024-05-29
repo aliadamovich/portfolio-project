@@ -9,7 +9,7 @@ const Services = () => {
 		<section>
 			<SectionTitle>my services</SectionTitle>
 			<SectionDescription>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum</SectionDescription>
-			<GridWrapper gap='20px'>
+			<GridWrapper>
 				<ServiceCard iconId='s-1' name="web development" description='blog, e-commerce'/>
 				<ServiceCard iconId='s-2' name="uI/uX design" description='Mobile app, website design'/>
 				<ServiceCard iconId='s-6' name="sound design" description='Voice Over, Beat Making'/>

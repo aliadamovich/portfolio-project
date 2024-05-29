@@ -17,9 +17,9 @@ export function Period(props: PeriodPropsType) {
 		<StyledPeriod>
 			<PlaceColumn>
 				<Title>{props.placeTitle}</Title>
-				<FlexWrapper gap='20px'>
+				<FlexWrapper gap='20px' >
 					<Description as={'span'}>{props.placeDescription}</Description>
-					<Label color={theme.colors.sectionsBg} size='10px'>{props.label}</Label>
+					<Label>{props.label}</Label>
 				</FlexWrapper>
 			</PlaceColumn>
 
@@ -37,18 +37,23 @@ const StyledPeriod = styled.div`
 	&:not(:last-child){
 		border-bottom: 1px solid ${theme.colors.iconBg};
 	}
+
+	@media (max-width:1024px){
+		flex-direction: column;
+	};
 `
 const PlaceColumn = styled.div`
 	flex: 0 1 40%;
+
+	${Label} {
+		color: ${theme.colors.sectionsBg};
+		font-size: 10px;
+	}
 `
 const SubjectColumn = styled.div`
 	flex: 0 1 60%;
 `
 const Title = styled.h3`
-	font-size: 18px;
-	font-weight: 500;
-	line-height: 124%;
-	color: ${theme.colors.boldFont};
 	margin-bottom: 25px;
 `
 

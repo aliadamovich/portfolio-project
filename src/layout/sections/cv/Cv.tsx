@@ -22,7 +22,9 @@ export const Cv = () => {
 				<Progress title='Languages' knowledge={languages}/>
 				<Progress title='Skills' knowledge={skills}/>
 				<Extra extra={extra}/>
-				<CvContainer><Button text='download cv'/></CvContainer>
+				<CvContainer>
+				<Button>download cv</Button>
+				</CvContainer>
 
 		</StyledCv>
 	)
@@ -37,4 +39,9 @@ const StyledCv = styled.aside`
 	left: 0;
 	padding: 50px 45px 0px 40px;
 	background-color: ${theme.colors.sectionsBg};
+
+
+	@media (max-width:1024px){
+		display: none;
+	};
 `

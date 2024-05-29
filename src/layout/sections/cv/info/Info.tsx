@@ -1,6 +1,5 @@
 import React from 'react'
 import mini from '../../../../assets/images/main_mini.jpeg'
-import { SidebarTitle } from '../SidebarTitle'
 import styled from 'styled-components'
 import { IconsRow } from './icons-row/IconsRow'
 import { DataInfo } from './data-info/DataInfo'
@@ -20,7 +19,7 @@ export const Info = () => {
 	return (
 		<StyledInfo>
 			<StyledPhoto><img src={mini} alt="hero photo" /></StyledPhoto>
-			<SidebarTitle centered>Rayan Adlrdard</SidebarTitle>
+			<h3>Rayan Adlrdard</h3>
 			<Position>Front-end Developer</Position>
 			<IconsRow icons={icons}/>
 			<CvContainer>
@@ -31,7 +30,9 @@ export const Info = () => {
 }
 
 const StyledInfo = styled.div`
-	
+	h3 {
+		text-align: center;
+	}
 `
 
 const StyledPhoto = styled.div`

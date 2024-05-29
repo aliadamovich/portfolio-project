@@ -12,7 +12,7 @@ export const Main = () => {
 				<MainContent>
 					<MainTitle>I’m Rayan Adlrdard <span>Front-end</span> Developer</MainTitle>
 					<MainText>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat feugiat placerat lobortis. Natoque rutrum semper sed suspendisse nunc lectus.</MainText>
-					<Button text='HIRE ME' />
+					<Button isIcon={true} iconId='arrow-right'>HIRE ME</Button>
 				</MainContent>
 				<MainImgWrapper><img src={hero} alt="main photo" /></MainImgWrapper>
 			</FlexWrapper>

@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { SidebarTitle } from '../SidebarTitle'
 import { theme } from '../../../../styles/Theme'
 import { CvContainer } from '../CvContainer'
 
@@ -13,7 +12,7 @@ type ProgressPropsType = {
 export const Progress = (props: ProgressPropsType) => {
 	return (
 		<CvContainer>
-			<SidebarTitle>{props.title}</SidebarTitle>
+			<h3>{props.title}</h3>
 
 			{
 				props.knowledge.map((l, index) => {

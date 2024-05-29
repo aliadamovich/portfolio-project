@@ -1,24 +1,30 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Icon } from '../icon/Icon'
+import { theme } from '../../styles/Theme'
 
 type ButtonPropsType = {
-	text?: string
 	isIcon?: boolean
+	iconId?: string
+	children?: React.ReactNode
 }
 
-export function Button(props: ButtonPropsType) {
+export const Button = (props: ButtonPropsType) => {
 	return (
-		<StyledButton>	
-			<ButtonText>{props.text}</ButtonText>
-			{/* <Icon iconId='arrow-right' /> */}
+		<StyledButton>
+			{props.isIcon && <Icon iconId={props.iconId} />}{props.children}
 		</StyledButton>
 	)
 }
 
 const StyledButton = styled.button`
-background: rgb(255, 180, 0);
-
+	background: ${theme.colors.accent};
+	font-size: 14px;
+	color: ${theme.colors.boldFont};
+	font-weight: 600;
+	text-transform: uppercase;
+	height: 40px;
+	padding: 2px 40px;
 `
 
 const ButtonText = styled.span`

@@ -1,14 +1,16 @@
 import React from 'react'
-import { FlexWrapper } from '../FlexWrapper'
 import { Slide } from './slide/Slide'
 import review1 from '../../assets/images/review_1.jpeg';
 import review2 from '../../assets/images/review_2.jpeg';
 import review3 from '../../assets/images/review_3.jpeg';
+import { theme } from '../../styles/Theme';
+import styled from 'styled-components';
+import { GridWrapper } from '../GridWrapper';
 
 export function Slider() {
 	return (
 		<div>
-			<FlexWrapper gap='15px'>
+			<GridWrapper>
 				<Slide
 				name='James Gouse' 
 				title='Great Quality!'
@@ -30,7 +32,32 @@ export function Slider() {
 					job='Business man'
 					photo={review3} />
 					
-			</FlexWrapper>
+			</GridWrapper>
+			<Pagination>
+				<span></span>
+				<span></span>
+				<span className='active'></span>
+			</Pagination>
 		</div>
 	)
 }
+
+const Pagination = styled.div`
+	margin-top: 50px;
+	text-align: center;
+	span {
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background-color: ${theme.colors.mainFont};
+		opacity: 0.8;
+		& + span {
+			margin-left: 10px;
+		}
+		&.active {
+			background-color: ${theme.colors.accent};
+			opacity: 1;
+		}
+	}
+`

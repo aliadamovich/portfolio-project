@@ -5,14 +5,6 @@ import { theme } from '../../../../styles/Theme'
 import { Label } from '../../../../components/Label'
 import { Button } from '../../../../components/button/Button'
 
-// type OptionType = {
-// 	title: string,
-// 	isActive: boolean
-// }
-
-// type OptionsType = {
-// 	options: OptionType[]
-// }
 
 type PriceCardPropsType = {
 	rate: string
@@ -24,6 +16,10 @@ type PriceCardPropsType = {
 
 type PopularLabelPropsType = {
 	opacity?: string
+}
+
+type PlanTitlePropsType = {
+	color: string
 }
 
 export const PriceCard = (props: PriceCardPropsType) => {
@@ -52,7 +48,7 @@ export const PriceCard = (props: PriceCardPropsType) => {
 										</OptionsList>
 					})}
 			</StyledList>
-			<Button text='order now' />
+			<Button>order now</Button>
 		</StyledCard>
 	)
 }
@@ -71,8 +67,6 @@ const CardName = styled.h3`
 	font-size: 24px;
 	font-weight: 600;
 	line-height: 124%;
-	text-transform: capitalize;
-	color: ${theme.colors.boldFont};
 	text-align: center;
 `
 
@@ -107,9 +101,7 @@ const OptionsList = styled.li`
 		margin-bottom: 17px;
 	}
 `
-type PlanTitlePropsType = {
-color: string
-}
+
 const PlanTitle = styled.span<PlanTitlePropsType>`
 	color: ${props => props.color};
 `
@@ -125,3 +117,4 @@ const PopularLabel = styled.span<PopularLabelPropsType>`
 	text-align: center;
 	padding: 3px;
 `
+
