@@ -3,10 +3,11 @@ import { SectionTitle } from '../../../components/SectionTitle'
 import { SectionDescription } from '../../../components/SectionDescription'
 import { ServiceCard } from './service-card/ServiceCard'
 import { GridWrapper } from '../../../components/GridWrapper'
+import styled from 'styled-components'
 
 const Services = () => {
 	return (
-		<section>
+		<ServicesSection>
 			<SectionTitle>my services</SectionTitle>
 			<SectionDescription>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum</SectionDescription>
 			<GridWrapper>
@@ -17,8 +18,18 @@ const Services = () => {
 				<ServiceCard iconId='s-4' name="photography" description='portrait, product photography'/>
 				<ServiceCard iconId='s-5' name="advertising" description='lorem ipsum amet'/>
 			</GridWrapper>
-		</section>
+		</ServicesSection>
 	)
 }
 
 export default Services
+
+
+const ServicesSection = styled.section`
+	h2 {
+		margin-top: 138px;
+	}
+	>p {
+		margin-bottom: 64px;
+	}
+`

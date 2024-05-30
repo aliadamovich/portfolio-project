@@ -2,6 +2,7 @@ import React from 'react'
 import { SectionTitle } from '../../../../components/SectionTitle'
 import styled from 'styled-components'
 import { Button } from '../../../../components/button/Button'
+import { theme } from '../../../../styles/Theme'
 
 export function ContactForm() {
 	return (
@@ -10,19 +11,19 @@ export function ContactForm() {
 			<Form>
 				<StyledInput>
 					<label htmlFor="name">Your Full Name ( Required)</label>
-					<input type="text" name="name" id="name" />
+					<Field type="text" name="name" id="name" />
 				</StyledInput>
 				<StyledInput>
 					<label htmlFor="email">Your Email ( Required)</label>
-					<input type="email" name="email" id="email" />
+					<Field type="email" name="email" id="email" />
 				</StyledInput>
 				<StyledInput>
 					<label htmlFor="subject">Subject</label>
-					<input type="text" name="subject" id="subject" />
+					<Field type="text" name="subject" id="subject" />
 				</StyledInput>
 				<StyledInput>
 					<label htmlFor="text">Your Message</label>
-					<textarea name="text" id="text" />
+					<Field as='textarea' name="text" id="text" />
 				</StyledInput>
 				<Button>send message</Button>
 			</Form>
@@ -31,13 +32,47 @@ export function ContactForm() {
 }
 
 const StyledForm = styled.div`
-	
+
+	h2 {
+		text-align: left;
+	}
 `
 const Form = styled.form`
-	
+	max-width: 570px;
+	width: 100%;
+	background-color: ${theme.colors.sectionsBg};
+	padding: 25px;
+
+	>*:not(:last-child) {
+		margin-bottom: 25px;
+	}
+
+	textarea {
+		resize: none;
+		height: 210px;
+	}
 `
 const StyledInput = styled.div`
 	label {
 		display: block;
+		font-size: 18px;
+		font-weight: 500;
+		margin-bottom: 8px;
 	}
+
+`
+
+const Field = styled.input`
+	width: 100%;
+		background-color: ${theme.colors.mainBg};
+		border: none;
+		padding: 10px 15px;
+
+		color: ${theme.colors.boldFont};
+		font-family: 'Inter', sans-serif;
+		font-size: 18px;
+
+		&:focus-visible {
+			outline: 1px solid ${theme.colors.mainFont};
+		}
 `

@@ -15,8 +15,8 @@ export function Contact() {
 }
 
 const StyledContact = styled.section`
-	display: grid;
-	grid-template: auto 300px / 1fr 1fr;
+	display: grid; 
+	grid-template: auto 300px / 1fr 370px;
 	column-gap: 30px;
 	row-gap: 70px;
 `

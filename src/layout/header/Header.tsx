@@ -31,7 +31,6 @@ const StyledHeader = styled.header`
 	display: flex;
 	flex-direction: column;
 	gap: 208px;
-	overflow: auto;
 	background-color: ${theme.colors.headerBg};
 
 	@media (max-width:1024px){

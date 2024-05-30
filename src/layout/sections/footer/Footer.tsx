@@ -2,6 +2,7 @@ import React from 'react'
 import { Icon } from '../../../components/icon/Icon'
 import styled from 'styled-components'
 import { FlexWrapper } from '../../../components/FlexWrapper'
+import { theme } from '../../../styles/Theme'
 
 export function Footer() {
 	return (
@@ -21,9 +22,17 @@ export function Footer() {
 }
 
 const StyledFooter = styled.footer`
+	margin-top: 95px;
 `
 const Copyright = styled.div`
-text-align: center;
+	background-color: ${theme.colors.sectionsBg};
+	display: flex;
+	align-items: center;
+	gap: 17px;
+	justify-content: center;
+	padding: 14px 10px;
+	margin-top: 95px;
 `
 const Small = styled.small`
+	color: ${theme.colors.boldFont};
 `

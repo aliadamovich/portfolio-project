@@ -75,4 +75,11 @@ export const Price = () => {
 }
 
 const StyledPriceSection = styled.section`
+	h2 {
+		margin: 60px 0 25px;
+	}
+
+	>p {
+		margin-bottom: 66px;
+	}
 `

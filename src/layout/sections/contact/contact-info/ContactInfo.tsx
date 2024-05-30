@@ -1,32 +1,39 @@
 import React from 'react'
 import { SectionTitle } from '../../../../components/SectionTitle'
 import { ContactCard } from './contact-card/ContactCard'
+import styled from 'styled-components'
 
 export function ContactInfo() {
 
 	const addressOptions = [
-		{ name: 'Country', value: "Bangladesh" },
-		{ name: 'City', value: "Dhaka" },
-		{ name: 'Street', value: "35 vhatara, Badda" }
+		{ name: 'Country', value: "Bangladesh", href:'https://www.google.com/maps/place/%D0%91%D0%B0%D0%BD%D0%B3%D0%BB%D0%B0%D0%B4%D0%B5%D1%88/@23.4843236,87.6991591,7z/data=!3m1!4b1!4m6!3m5!1s0x30adaaed80e18ba7:0xf2d28e0c4e1fc6b!8m2!3d23.684994!4d90.356331!16zL20vMDE2MmI?entry=ttu' },
+		{ name: 'City', value: "Dhaka", href:'https://www.google.com/maps/place/%D0%91%D0%B0%D0%BD%D0%B3%D0%BB%D0%B0%D0%B4%D0%B5%D1%88/@23.4843236,87.6991591,7z/data=!3m1!4b1!4m6!3m5!1s0x30adaaed80e18ba7:0xf2d28e0c4e1fc6b!8m2!3d23.684994!4d90.356331!16zL20vMDE2MmI?entry=ttu' },
+		{ name: 'Street', value: "35 vhatara, Badda", href:'https://www.google.com/maps/place/%D0%91%D0%B0%D0%BD%D0%B3%D0%BB%D0%B0%D0%B4%D0%B5%D1%88/@23.4843236,87.6991591,7z/data=!3m1!4b1!4m6!3m5!1s0x30adaaed80e18ba7:0xf2d28e0c4e1fc6b!8m2!3d23.684994!4d90.356331!16zL20vMDE2MmI?entry=ttu' }
 	]
 	const mailOptions = [
-		{ name: 'Email', value: "youremail@gmail.com" },
-		{ name: 'Skype:', value: "@yourusername" },
-		{ name: 'Telegram:', value: "@yourusername" }
+		{ name: 'Email', value: "youremail@gmail.com", href:'mailto:youremail@gmail.com' },
+		{ name: 'Skype:', value: "@yourusername", href:'https://skype.com' },
+		{ name: 'Telegram:', value: "@yourusername", href:'https://t.me/yourusername' }
 	]
 	const phoneOptions = [
-		{ name: 'Support services:', value: "15369" },
-		{ name: 'Office:', value: "+58 (021)356 587 235" },
-		{ name: 'Personal:', value: "+58 (021)356 587 235" }
+		{ name: 'Support services:', value: "15369", href:'tel:58021356587235' },
+		{ name: 'Office:', value: "+58 (021)356 587 235", href:'tel:58021356587235' },
+		{ name: 'Personal:', value: "+58 (021)356 587 235", href:'tel:58021356587235' }
 	]
 
 	return (
-		<div>
+		<StyledInfo>
 			<SectionTitle>Contact information</SectionTitle>
 
 			<ContactCard iconId='map' options={addressOptions} />
 			<ContactCard iconId='mail' options ={mailOptions}/>
 			<ContactCard iconId='mobile' options={phoneOptions} />
-		</div>
+		</StyledInfo>
 	)
 }
+
+const StyledInfo = styled.div`
+	h2 {
+		text-align: start;
+	}
+`

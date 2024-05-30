@@ -16,7 +16,7 @@ type LinkProps = {
 	secondary?: boolean
 }
 
-export function SvgLink(props: SvgLinkPropsType) {
+export const SvgLink = (props: SvgLinkPropsType) => {
 	return (
 			<Link href="" secondary={props.secondary}>
 				<Icon iconId={props.iconId}

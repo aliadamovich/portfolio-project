@@ -13,7 +13,7 @@ type ServiceCardPropsType = {
 export const ServiceCard = (props: ServiceCardPropsType) => {
 	return (
 		<CardBody>
-			<Icon iconId={props.iconId} fill={theme.colors.accent}/>
+			<Icon iconId={props.iconId} fill={theme.colors.accent} width='78' height='78' viewBox='0 0 78 78'/>
 			<Title>{props.name}</Title>
 			<ServiceDescription>{props.description}</ServiceDescription>
 			{/* <Link href='#'>
@@ -37,7 +37,7 @@ const CardBody = styled.div`
 	flex: 0 1 33.3%;
 	text-align: center;
 	background-color: ${theme.colors.sectionsBg};
-	padding: 25px 0 42px;
+	padding: 25px 0 25px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;

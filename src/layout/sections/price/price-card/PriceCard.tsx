@@ -56,7 +56,7 @@ export const PriceCard = (props: PriceCardPropsType) => {
 const StyledCard = styled.div`
 position: relative;
 background: #fff;
-padding: 54px 30px;
+padding: 54px 30px 25px;
 transition: all 0.3s ease 0s;
 &:hover{
 	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
