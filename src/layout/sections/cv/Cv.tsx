@@ -23,7 +23,7 @@ export const Cv = () => {
 				<Progress title='Skills' knowledge={skills}/>
 				<Extra extra={extra}/>
 				<CvContainer>
-				<Button>download cv</Button>
+				<Button text='download cv' isIcon iconId='download' width='12' height='12' viewBox='0 0 12 12'/>
 				</CvContainer>
 
 		</StyledCv>
@@ -40,8 +40,8 @@ const StyledCv = styled.aside`
 	padding: 50px 45px 0px 40px;
 	background-color: ${theme.colors.sectionsBg};
 
-
-	@media (max-width:1024px){
+	/* @media (max-width:1024px){
 		display: none;
-	};
+	}; */
+
 `

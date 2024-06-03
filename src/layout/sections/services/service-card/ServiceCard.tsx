@@ -41,7 +41,9 @@ const CardBody = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-
+	>svg {
+		transition: all 0.5s ease 0s;
+	}
 	a {
 	opacity: 0;
 }

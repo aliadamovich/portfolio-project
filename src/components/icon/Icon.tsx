@@ -14,15 +14,12 @@ type IconPropsType = {
 
 export const Icon = (props: IconPropsType) => {
 	return(
-		<StyledSvg width={props.width || '18'} 
+		<svg width={props.width || '18'} 
 		 			height={props.height || '18'} 
 		 			viewBox={props.viewBox || "0 0 18 18"}
 					fill={props.fill || theme.colors.boldFont}>
 			<use xlinkHref={ `${sprite}#${props.iconId}` }></use>
-		</StyledSvg>
+		</svg>
 	)
 }
 
-const StyledSvg = styled.svg`
-	transition: all 0.5s ease 0s;
-`

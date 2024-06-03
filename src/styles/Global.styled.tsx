@@ -9,6 +9,9 @@ export const GlobalStyles = createGlobalStyle`
 		padding: 0;
 		box-sizing: border-box;
 	}
+	*::selection {
+		background-color: ${theme.colors.accent}
+	}
 
 	body {
 		margin: 0;

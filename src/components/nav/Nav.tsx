@@ -9,12 +9,12 @@ export const Nav = (props: { menuIcons: Array<string>}) => {
 			<ul>
 				{
 					props.menuIcons.map((el, index)=> {
-					return <StyledList key={index}>
-						<SvgLink secondary 
-											iconId={el} 
-											width="18" height="18" viewBox="0 0 18 18" 
-											fill='#767676' />
-						</StyledList>
+					return <li key={index}>
+									<SvgLink secondary 
+													iconId={el} 
+													width="18" height="18" viewBox="0 0 18 18" 
+													fill='currentColor' />
+								</li>
 				})
 				}
 			</ul>
@@ -30,9 +30,4 @@ ul {
 	align-items: center;
 	gap: 42px;
 }
-`
-
-
-const StyledList = styled.li`
-	
 `

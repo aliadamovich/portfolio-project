@@ -10,9 +10,9 @@ export const Header = () => {
 	return(
 		<StyledHeader>
 
-			<button>
-				<Icon iconId="moon" width="30" height="30" viewBox="0 0 30 30" fill={theme.colors.boldFont}/>
-			</button>
+			<MoonButton>
+				<Icon iconId="moon" width="30" height="30" viewBox="0 0 30 30" fill='currentColor'/>
+			</MoonButton>
 			<Nav menuIcons={icons}/>
 
 		</StyledHeader>
@@ -24,7 +24,8 @@ const StyledHeader = styled.header`
 	z-index: 9999;
 	top: 0;
 	right: 0;
-	width: 75px;
+	max-width: 105px;
+	width: 100%;
 	min-height: 100vh;
 	height: 100%;
 	padding: 48px 5px;
@@ -33,7 +34,14 @@ const StyledHeader = styled.header`
 	gap: 208px;
 	background-color: ${theme.colors.headerBg};
 
-	@media (max-width:1024px){
+	/* @media (max-width:1024px){
 		display: none;
-	};
+	}; */
+`
+
+const MoonButton = styled.button`
+	color: ${theme.colors.boldFont};
+	&:hover{
+		color: ${theme.colors.accent};
+	}
 `

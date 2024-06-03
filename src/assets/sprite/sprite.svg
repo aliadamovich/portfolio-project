@@ -1,6 +1,6 @@
 <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
 
-<path id="arrow-right" d="M8.11 4.51L4.53 0.94L5.48 0L10.66 5.18L5.48 10.37L4.53 9.42L8.11 5.85L0 5.85L0 4.51L8.11 4.51Z" fill="#18191A" fill-opacity="1.000000" fill-rule="nonzero"/>
+<path id="arrow-right" d="M8.11 4.51L4.53 0.94L5.48 0L10.66 5.18L5.48 10.37L4.53 9.42L8.11 5.85L0 5.85L0 4.51L8.11 4.51Z" fill-opacity="1.000000" fill-rule="nonzero"/>
 <path id="arrow-left" d="M1.7 2.83L25.5 2.83L25.5 3.83L1.7 3.83L3.68 5.8C3.88 6 3.88 6.31 3.68 6.51C3.48 6.71 3.17 6.71 2.97 6.51L0.14 3.68C-0.05 3.48 -0.05 3.17 0.14 2.97L2.97 0.14C3.17 -0.05 3.48 -0.05 3.68 0.14C3.88 0.34 3.88 0.65 3.68 0.85L1.7 2.83Z"  fill-opacity="1.000000" fill-rule="evenodd"/>
 <g id='arrow-top' clip-path="url(#clip1_1618)">
 		<path id="Vector" d="M17.07 16.36L11.41 22.02L10 20.6L15.65 14.95L10.7 10L22.02 10L22.02 21.31L17.07 16.36Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero"/>

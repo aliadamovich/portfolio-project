@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Period } from '../../components/period/Period'
-import { SectionTitle } from '../../components/SectionTitle'
-import { SectionDescription } from '../../components/SectionDescription'
-import { theme } from '../../styles/Theme'
+import { Period } from '../../../components/period/Period'
+import { SectionTitle } from '../../../components/SectionTitle'
+import { SectionDescription } from '../../../components/SectionDescription'
+import { theme } from '../../../styles/Theme'
 
 export function Work() {
 	return (

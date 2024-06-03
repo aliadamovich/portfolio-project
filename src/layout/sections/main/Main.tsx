@@ -27,7 +27,7 @@ export const Main = () => {
 				<MainContent>
 					<MainTitle>I’m Rayan Adlrdard <span>Front-end</span> Developer</MainTitle>
 					<MainText>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat feugiat placerat lobortis. Natoque rutrum semper sed suspendisse nunc lectus.</MainText>
-					<Button isIcon={true} iconId='arrow-right'>HIRE ME</Button>
+					<Button text='HIRE ME' isIcon={true} iconId='arrow-right' width='11' height='11' viewBox='0 0 11 11' />
 				</MainContent>
 				<MainImgWrapper>
 					<img src={hero} alt="main photo" />
@@ -48,6 +48,7 @@ const MainContent = styled.div`
 	flex: 0 1 60%;
 	button {
 		height: 51px;
+		border-radius: 5px;
 	}
 `
 

@@ -12,6 +12,7 @@ type PriceCardPropsType = {
 	description: string
 	options: { title: string, isActive: boolean }[]
 	isPopular?: boolean
+	backGroundColor?: string
 }
 
 type PopularLabelPropsType = {
@@ -21,6 +22,7 @@ type PopularLabelPropsType = {
 type PlanTitlePropsType = {
 	color: string
 }
+
 
 export const PriceCard = (props: PriceCardPropsType) => {
 
@@ -48,19 +50,20 @@ export const PriceCard = (props: PriceCardPropsType) => {
 										</OptionsList>
 					})}
 			</StyledList>
-			<Button>order now</Button>
+			{/* <PriceButton className={ `${props.isPopular && 'popular'}` } >order now</PriceButton> */}
+			<Button rounded text='order now' />
 		</StyledCard>
 	)
 }
 
 const StyledCard = styled.div`
-position: relative;
-background: #fff;
-padding: 54px 30px 25px;
-transition: all 0.3s ease 0s;
-&:hover{
-	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
-}
+	position: relative;
+	background: #fff;
+	padding: 54px 30px 25px;
+	transition: all 0.3s ease 0s;
+	&:hover{
+		box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+	}
 `
 
 const CardName = styled.h3`
@@ -117,4 +120,28 @@ const PopularLabel = styled.span<PopularLabelPropsType>`
 	text-align: center;
 	padding: 3px;
 `
+// const PriceButton = styled.button`
+// 	height: 38px;
+// 	border-radius: 30px;
+// 	box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.15);
+// 	padding: 2px 40px;
+// 	text-transform: uppercase;
+// 	color: ${theme.colors.boldFont};
+// 	font-size: 14px;
+// 	font-weight: 700;
+// 	margin: 0px auto;
+// 	background-color: ${theme.colors.sectionsBg};
+// 	transition: all 0.3s ease 0s;
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center;
+// 	&:hover{
+// 		background-color: ${theme.colors.accent};
+// 		color: ${theme.colors.boldFont};
+// 	}
 
+// 	&.popular {
+// 	background-color: ${theme.colors.accent}
+// 	}
+
+// `

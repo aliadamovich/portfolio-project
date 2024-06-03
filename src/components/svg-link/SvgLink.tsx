@@ -18,24 +18,25 @@ type LinkProps = {
 
 export const SvgLink = (props: SvgLinkPropsType) => {
 	return (
-			<Link href="" secondary={props.secondary}>
+			<Link href="#" secondary={props.secondary}>
 				<Icon iconId={props.iconId}
 				width={props.width} 
 				height={props.height} 
 				viewBox={props.viewBox} 
-				fill={props.fill}/>
+				fill='currentColor'/>
 			</Link>
 	)
 }
 
 const Link = styled.a<LinkProps>`
 		background-color: ${theme.colors.accent};
+		color: ${theme.colors.boldFont};
 		border-radius: 50%;
 		padding: 6px;
 		display: inline-flex;
 		justify-content: center;
 		align-items: center;
-		transition: all 0.3s ease 0s;
+		transition: all 0.2s ease 0s;
 		&:hover{
 			background-color: ${theme.colors.iconBg};
 		}
@@ -43,8 +44,10 @@ const Link = styled.a<LinkProps>`
 		${props => props.secondary && css`
 			background-color: ${theme.colors.iconBg};
 			padding: 11px;
+			color: ${theme.colors.mainFont};
 			&:hover{
-				background-color: ${theme.colors.accent}
+				background-color: ${theme.colors.accent};
+				color: ${theme.colors.boldFont};
 			}
 	`}
 `

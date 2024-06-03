@@ -51,6 +51,10 @@ const Title = styled.h3`
 	margin-bottom: 18px;
 `
 const Review = styled.p`
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
 `
 const Person = styled.div`
 	margin-top: 60px;
