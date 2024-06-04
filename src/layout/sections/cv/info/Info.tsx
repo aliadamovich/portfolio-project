@@ -8,7 +8,16 @@ import { Cv } from '../Cv'
 import { CvContainer } from '../CvContainer'
 
 export const Info = () => {
-	const icons = ['facebook', 'instagram', 'twitter', 'linkedin', 'youtube', 'dribble'];
+
+	const icons = [
+		{ id: 'facebook', href: 'https://facebook.com', svg: 'facebook' },
+		{ id: 'instagram', href: 'https://instagram.com', svg: 'instagram' },
+		{ id: 'twitter', href: 'https://facebook.com', svg: 'twitter' },
+		{ id: 'linkedin', href: 'https://linkedin.com', svg: 'linkedin' },
+		{ id: 'youtube', href: 'https://youtube.com', svg: 'youtube' },
+		{ id: 'dribble', href: 'https://dribble.com', svg: 'dribble' },
+	]
+
 	const data = [
 		{ name: 'Age:', value: '24' }, 
 		{ name: 'Residence:', value: 'BD'}, 

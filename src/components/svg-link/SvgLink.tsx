@@ -9,6 +9,7 @@ type SvgLinkPropsType = {
 	height?: string
 	viewBox?: string
 	fill?: string
+	href?: string
 	secondary?: boolean
 }
 
@@ -18,7 +19,7 @@ type LinkProps = {
 
 export const SvgLink = (props: SvgLinkPropsType) => {
 	return (
-			<Link href="#" secondary={props.secondary}>
+			<Link href={props.href} secondary={props.secondary}>
 				<Icon iconId={props.iconId}
 				width={props.width} 
 				height={props.height} 

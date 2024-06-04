@@ -5,7 +5,14 @@ import { theme } from "../../styles/Theme";
 
 export const Header = () => {
 
-	const icons = ['m-1', 'm-2', 'm-3', 'm-4', 'm-5', 'm-6']
+	const icons = [
+		{id: 'home', name: 'Home', svg: 'm-1'},
+		{id: 'services', name: 'Services', svg: 'm-2'},
+		{id: 'education', name: 'Education', svg: 'm-3'},
+		{id: 'work', name: 'Work', svg: 'm-4'},
+		{id: 'blog', name: 'Blog', svg: 'm-5'},
+		{id: 'contact', name: 'Contact', svg: 'm-6'},
+		]
 
 	return(
 		<StyledHeader>
