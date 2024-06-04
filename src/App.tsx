@@ -8,7 +8,7 @@ import { Price } from './layout/sections/price/Price';
 import Services from './layout/sections/services/Services';
 import { Recomendations } from './layout/sections/recomendations/Recomendations';
 import { Education } from './layout/education/Education';
-import { Work } from './layout/work/Work';
+import { Work } from './layout/sections/work/Work';
 import { Contact } from './layout/sections/contact/Contact';
 import {Footer} from './layout/sections/footer/Footer';
 import { Blog } from './layout/sections/blog/Blog';

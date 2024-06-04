@@ -20,7 +20,9 @@ export const Header = () => {
 }
 
 const StyledHeader = styled.header`
-	position: fixed;
+	/* position: absolute; */
+	position: sticky;
+	order: 3;
 	z-index: 9999;
 	top: 0;
 	right: 0;
@@ -34,9 +36,10 @@ const StyledHeader = styled.header`
 	gap: 208px;
 	background-color: ${theme.colors.headerBg};
 
-	/* @media (max-width:1024px){
-		display: none;
-	}; */
+	@media screen and (max-width: 1250px) {
+		max-width: 60px;
+		gap: 100px;
+	}
 `
 
 const MoonButton = styled.button`

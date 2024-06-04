@@ -33,15 +33,15 @@ export const Cv = () => {
 const StyledCv = styled.aside`
 	max-width: 305px;
 	width: 100%;
-	position: absolute;
-	/* height: 100%; */
-	top: 0;
-	left: 0;
+	/* position: absolute; */
+	height: 100%;
+	/* top: 0;
+	left: 0; */
 	padding: 50px 45px 0px 40px;
 	background-color: ${theme.colors.sectionsBg};
 
-	/* @media (max-width:1024px){
+	@media (max-width:992px){
 		display: none;
-	}; */
+	};
 
 `

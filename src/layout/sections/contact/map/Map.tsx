@@ -12,8 +12,8 @@ export function Map() {
 }
 
 const StyledMap = styled.div`
-	grid-column-start: span 2;
-	
+	margin-top: 70px;
+	height: 300px;
 	iframe {
 		border: 1px solid ${theme.colors.sectionsBg};
 	}

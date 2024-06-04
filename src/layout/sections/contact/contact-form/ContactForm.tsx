@@ -32,14 +32,14 @@ export function ContactForm() {
 }
 
 const StyledForm = styled.div`
-
+	flex: 1 1 auto;
 	h2 {
 		text-align: left;
 	}
 `
 const Form = styled.form`
-	max-width: 570px;
 	width: 100%;
+	min-width: 250px;
 	background-color: ${theme.colors.sectionsBg};
 	padding: 25px;
 

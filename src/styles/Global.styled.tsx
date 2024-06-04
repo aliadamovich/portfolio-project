@@ -13,6 +13,24 @@ export const GlobalStyles = createGlobalStyle`
 		background-color: ${theme.colors.accent}
 	}
 
+	*::-webkit-scrollbar {
+		width: 10px;
+	}
+	*::-webkit-scrollbar-track {
+		background-color: ${theme.colors.headerBg};
+
+	}
+	*::-webkit-scrollbar-thumb {
+		background-color: ${theme.colors.mainFont};
+		border: 3px solid ${theme.colors.headerBg};
+		border-radius: 25px;
+	}
+
+	* {
+		scrollbar-width: thin; 
+		scrollbar-color: ${theme.colors.mainFont} ${theme.colors.headerBg} 
+	}
+
 	body {
 		margin: 0;
 		font-family: "Inter", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
