@@ -27,7 +27,6 @@ export const Header = () => {
 }
 
 const StyledHeader = styled.header`
-	/* position: absolute; */
 	position: sticky;
 	order: 3;
 	z-index: 9999;
@@ -37,14 +36,16 @@ const StyledHeader = styled.header`
 	width: 100%;
 	min-height: 100vh;
 	height: 100%;
-	padding: 48px 5px;
+	padding: 48px 2px;
 	display: flex;
 	flex-direction: column;
 	gap: 208px;
 	background-color: ${theme.colors.headerBg};
+	overflow: hidden;
 
-	@media screen and (max-width: 1250px) {
-		max-width: 60px;
+	@media ${theme.media.first} {
+		/* padding: 48px 10px; */
+		max-width: 75px;
 		gap: 100px;
 	}
 `

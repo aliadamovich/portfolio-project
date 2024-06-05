@@ -14,7 +14,7 @@ export const Nav = (props: { menuIcons: {id: string, name: string, svg: string}[
 													iconId={el.svg}
 													width="18" height="18" viewBox="0 0 18 18" 
 													fill='currentColor' />
-													<ToolTip>{el.name}</ToolTip>
+													 <ToolTip>{el.name}</ToolTip> 
 								</li>
 				})
 				}
@@ -60,11 +60,9 @@ ul {
 	flex-direction: column;
 	align-items: center;
 	gap: 42px;
-
 	margin: 0px auto;
 
 	li {
-		/* overflow: hidden; */
 		position: relative;
 
 		&:hover{

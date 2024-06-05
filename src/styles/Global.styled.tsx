@@ -22,13 +22,13 @@ export const GlobalStyles = createGlobalStyle`
 	}
 	*::-webkit-scrollbar-thumb {
 		background-color: ${theme.colors.mainFont};
-		border: 3px solid ${theme.colors.headerBg};
+		border: 3px solid ${theme.colors.mainBg};
 		border-radius: 25px;
 	}
 
 	* {
 		scrollbar-width: thin; 
-		scrollbar-color: ${theme.colors.mainFont} ${theme.colors.headerBg} 
+		scrollbar-color: ${theme.colors.mainFont} ${theme.colors.mainBg} 
 	}
 
 	body {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Progress } from './progress/Progress'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Extra } from './extra/Extra'
 import { Info } from './info/Info'
 import { Icon } from '../../../components/icon/Icon'
@@ -17,7 +17,7 @@ export const Cv = () => {
 	const extra = ['Bootstrap, Materialize', 'Stylus, Sass, Less', 'Gulp, Webpack, Grunt', 'GIT Knowledge']
 	
 	return (
-			<StyledCv>
+			<StyledCv isOpen={false}>
 				<Info />
 				<Progress title='Languages' knowledge={languages}/>
 				<Progress title='Skills' knowledge={skills}/>
@@ -30,18 +30,30 @@ export const Cv = () => {
 	)
 }
 
-const StyledCv = styled.aside`
+const StyledCv = styled.aside<{isOpen: boolean}>`
 	max-width: 305px;
 	width: 100%;
-	/* position: absolute; */
 	height: 100%;
-	/* top: 0;
-	left: 0; */
 	padding: 50px 45px 0px 40px;
 	background-color: ${theme.colors.sectionsBg};
+	transition: all 0.3s ease 0s;
+	/* position: sticky;
+	overflow-y: auto;
+	top: 0;
+	left: 0; */
+	@media ${theme.media.smallScreen} {
+		position: absolute;
+		top: 0;
+		left: -100%;
 
-	@media (max-width:992px){
-		display: none;
+		${props => props.isOpen && css<{ isOpen: boolean }>`
+		left: 0;
+		z-index: 10001;
+	`}
 	};
 
+	&.open {
+		left: 0;
+		z-index: 10001;
+	}
 `

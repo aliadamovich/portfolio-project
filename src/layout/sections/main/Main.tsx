@@ -1,9 +1,10 @@
 import React from 'react';
 import hero from './../../../assets/images/main_img.png'
 import { FlexWrapper } from '../../../components/FlexWrapper';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Button } from '../../../components/button/Button';
 import { theme } from '../../../styles/Theme';
+import bg_img from './../../../assets/images/bg_items.svg'
 
 type BgRoundElementsPropsType = {
 	top: string
@@ -21,22 +22,18 @@ type BgSquareElementsPropsType = {
 export const Main = () => {
 	return (
 		<MainSection>
-			{/* <Layer /> */}
-			<BgRoundElements top='5%' left='5%'></BgRoundElements>
-			<BgRoundElements top='85%' left='60%'></BgRoundElements>
-			<BgRoundElements top='10%' left='55%' color='rgba(5, 255, 0, 0.8)'></BgRoundElements>
-			<BgRoundElements top='93%' left='10%' color='rgba(5, 255, 0, 0.8)'></BgRoundElements>
-			<BgSquareElements top='15%' left='93%'></BgSquareElements>
-			<BgSquareElements top='70%' left='45%' color='rgba(0, 71, 255, 0.8)'></BgSquareElements>
-			<TriangleElement></TriangleElement>
-
-			<FlexWrapper align='center' justify='space-between'>
+			<BurgerMenuButton isOpen={false}>
+				<span></span>
+			</BurgerMenuButton>
+			<FlexWrapper justify='space-between'>
 				<MainContent>
 					<MainTitle>I’m Rayan Adlrdard <span>Front-end</span> Developer</MainTitle>
 					<MainText>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat feugiat placerat lobortis. Natoque rutrum semper sed suspendisse nunc lectus.</MainText>
 					<Button text='HIRE ME' isIcon={true} iconId='arrow-right' width='11' height='11' viewBox='0 0 11 11' />
 				</MainContent>
-				<MainImage src={hero} alt="main photo" />
+				<MainImgWrapper >
+					<img src={hero} alt="main photo" />
+				</MainImgWrapper>
 			</FlexWrapper>
 		</MainSection>
 	)
@@ -46,15 +43,23 @@ const MainSection = styled.section`
 	background: ${theme.colors.sectionsBg};
 	padding: 0px 60px;
 	position: relative;
+	background: url(${bg_img}) ${theme.colors.sectionsBg} center/contain no-repeat;
+
+	@media ${theme.media.first} {
+		padding: 0 20px;
+	};
 `
 
 const MainContent = styled.div`
-	padding-top: 42px;
-	flex: 0 1 60%;
+	padding: 42px 0 15px 0;
+	flex: 1 1 auto;
+	
 	button {
 		height: 51px;
 		border-radius: 5px;
 	}
+
+	
 `
 
 const MainTitle = styled.h1`
@@ -62,7 +67,8 @@ const MainTitle = styled.h1`
 	font-weight: 700;
 	line-height: 123.6%;
 	color: ${theme.colors.boldFont};
-
+	/* font-size: calc(32px + 16 * ((100vw - 320px) / (1440 - 320))); */
+	font-size: calc( (min(100vw, 1440px) - 320px)/(1440 - 320) * (48 - 30) + 30px);
 	span {
 		color: ${theme.colors.accent}
 	}
@@ -73,65 +79,71 @@ const MainText = styled.p`
 	margin: 18px 0 42px 0;
 	max-width: 480px;
 `
+const MainImgWrapper = styled.div`
 
-const MainImage = styled.img`
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+	flex: 0 0 35%;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
 `
-// const Layer = styled.div`
-// 	width: 100%;
-// 	height: 100%;
-// 	position: absolute;
-// 	top: 0;left: 0;right: 0;bottom: 0;
 
-// 	&::before{
-// 	content: '';
-		
-// 	}
+const BurgerMenuButton = styled.button<{isOpen:boolean}>`
+	display: none;
+	position: absolute;
+	width: 30px;
+	height: 18px;
+	top: 20px;
+	left: 20px;
+	z-index: 10002;
+
+	@media ${theme.media.smallScreen} {
+		display: block;
+	}
 	
-// `
-
-const BgRoundElements = styled.span<BgRoundElementsPropsType>`
-	display: inline-block;
-	position: absolute;
-	width: 16px;
-	height: 16px;
-	top: ${props => props.top};
-	left: ${props => props.left};
-	border: 2px solid ${ props => props.color || theme.colors.accent};
-	border-radius: 50%;
-
-`
-const BgSquareElements = styled.span<BgSquareElementsPropsType>`
-	display: inline-block;
-	position: absolute;
-	width: 16px;
-	height: 16px;
-	top: ${props => props.top};
-	left: ${props => props.left};
-	border: 2px solid ${ props => props.color || theme.colors.accent};
-	transform: rotate(26deg);
-`
-
-const TriangleElement = styled.span`
-	position: absolute;
-	width: 0;
-	height: 0;
-	top: 90%;
-	left: 95%;
-	border-left: 8px solid transparent;
-	border-right: 8px solid transparent;
-	border-bottom: 16px solid rgba(255, 46, 0, 0.8);
-	
-	&::after{
-		content: '';
+	span {
 		position: absolute;
-		top: 5px;
-		left: -4px;
-		border-left: 4px solid transparent;
-		border-right: 4px solid transparent;
-		border-bottom: 9px solid white;
+		display: block;
+		background-color: ${theme.colors.accent};
+		width: 100%;
+		height: 2px;
+		top: 7px;
+		transition: all 0.3s ease 0s;
+
+		&::before{
+			content: '';
+			display:block;
+			background-color: ${theme.colors.accent};
+			width: 100%;
+			height: 2px;
+			position: absolute;
+			transform: translateY(-10px);
+			transition: all 0.3s ease 0s;
+		}
+		&::after{
+			content: '';
+			position: absolute;
+			display: block;
+			background-color: ${theme.colors.accent};
+			width: 100%;
+			height: 2px;
+			transform: translateY(10px);
+			transition: all 0.3s ease 0s;
+		}
 	}
 
+	${props => props.isOpen && css<{ isOpen: boolean }>`
+			span {
+			background-color: rgba(255, 255, 255, 0);
+			&::before{
+			transform: rotate(45deg) translateY(0px);
+			}
+			&::after{
+				transform: rotate(-45deg) translateY(0px);
+			}
+		}
+	`}
 `
+
