@@ -44,6 +44,7 @@ const StyledPeriod = styled.div`
 `
 const PlaceColumn = styled.div`
 	flex: 0 1 40%;
+	padding-bottom: 15px;
 
 	${Label} {
 		color: ${theme.colors.sectionsBg};

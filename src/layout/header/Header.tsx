@@ -44,9 +44,12 @@ const StyledHeader = styled.header`
 	overflow: hidden;
 
 	@media ${theme.media.first} {
-		/* padding: 48px 10px; */
 		max-width: 75px;
 		gap: 100px;
+	}
+
+	@media screen and (max-width:425px){
+		display: none;
 	}
 `
 

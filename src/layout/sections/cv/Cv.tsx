@@ -3,7 +3,6 @@ import { Progress } from './progress/Progress'
 import styled, { css } from 'styled-components'
 import { Extra } from './extra/Extra'
 import { Info } from './info/Info'
-import { Icon } from '../../../components/icon/Icon'
 import { Button } from '../../../components/button/Button'
 import { theme } from '../../../styles/Theme'
 import { CvContainer } from './CvContainer'
@@ -17,7 +16,7 @@ export const Cv = () => {
 	const extra = ['Bootstrap, Materialize', 'Stylus, Sass, Less', 'Gulp, Webpack, Grunt', 'GIT Knowledge']
 	
 	return (
-			<StyledCv isOpen={false}>
+			<StyledCv isOpen={true}>
 				<Info />
 				<Progress title='Languages' knowledge={languages}/>
 				<Progress title='Skills' knowledge={skills}/>
@@ -33,14 +32,16 @@ export const Cv = () => {
 const StyledCv = styled.aside<{isOpen: boolean}>`
 	max-width: 305px;
 	width: 100%;
-	height: 100%;
+	/* height: 100%; */
 	padding: 50px 45px 0px 40px;
 	background-color: ${theme.colors.sectionsBg};
 	transition: all 0.3s ease 0s;
-	/* position: sticky;
-	overflow-y: auto;
+	position: sticky;
+	height: 100vh;
+	overflow: auto;
+	overscroll-behavior: contain;
 	top: 0;
-	left: 0; */
+	left: 0;
 	@media ${theme.media.smallScreen} {
 		position: absolute;
 		top: 0;

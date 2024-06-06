@@ -12,6 +12,6 @@ export const Container = styled.div`
 	margin: 0px auto;
 
 	@media ${theme.media.smallScreen} {
-		/* padding: 0px 15px; */
+		padding: 0px 15px;
 	}
 `

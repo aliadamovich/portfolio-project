@@ -33,6 +33,11 @@ export function ContactForm() {
 
 const StyledForm = styled.div`
 	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
+	min-width: 300px;
+	/* width: 100%; */
+	
 	h2 {
 		text-align: left;
 	}
@@ -42,6 +47,7 @@ const Form = styled.form`
 	min-width: 250px;
 	background-color: ${theme.colors.sectionsBg};
 	padding: 25px;
+	flex-grow: 1;
 
 	>*:not(:last-child) {
 		margin-bottom: 25px;

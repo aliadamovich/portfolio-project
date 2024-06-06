@@ -30,6 +30,10 @@ const StyledPortfolioTabs = styled.ul`
 	
 		& + li {
 			margin-left: 37px;
+
+			@media ${theme.media.tablet} {
+				margin-left: 50px;
+			}
 		}
 
 		a {
@@ -37,6 +41,7 @@ const StyledPortfolioTabs = styled.ul`
 			font-size: 18px;
 			font-weight: 500;
 			color: ${theme.colors.boldFont};
+			line-height: 2;
 		}
 }
 `

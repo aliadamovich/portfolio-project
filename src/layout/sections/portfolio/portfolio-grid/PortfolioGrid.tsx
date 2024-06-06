@@ -23,8 +23,8 @@ export const PortfolioGrid = (props: { gridImages: Array<string> } ) => {
 
 const GridItem = styled.a`
 	position: relative;
-	padding-bottom: 97%;
 	z-index: 0;
+	
 	&:hover{
 		&::before,
 		&::after {
@@ -60,9 +60,9 @@ const GridItem = styled.a`
 		}
 
 	img {
-		position: absolute;
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		aspect-ratio: 1 / 1;
 	}
 `
