@@ -33,12 +33,12 @@ const StyledCard = styled.div`
 	padding: 25px 25px 16px;
 	text-align: center;
 	& + div {
-		margin-top: 18px;
+		margin-top: 15px;
 	}
 
 	>a {
-		padding: 12px;
-		margin-bottom: 31px;
+		padding: 11px;
+		margin-bottom: 30px;
 	}
 `
 const Row = styled.div`

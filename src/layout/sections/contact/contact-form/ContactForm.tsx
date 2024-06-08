@@ -32,12 +32,10 @@ export function ContactForm() {
 }
 
 const StyledForm = styled.div`
-	flex: 1 1 auto;
 	display: flex;
 	flex-direction: column;
-	min-width: 300px;
-	/* width: 100%; */
-	
+	width: 345px;
+	flex-grow: 5;
 	h2 {
 		text-align: left;
 	}

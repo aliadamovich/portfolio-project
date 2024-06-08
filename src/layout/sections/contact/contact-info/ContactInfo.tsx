@@ -36,8 +36,7 @@ export function ContactInfo() {
 
 const StyledInfo = styled.div`
 	flex-grow: 1;
-	min-width: 300px;
-
+	width: 345px;
 	h2 {
 		text-align: start;
 	}

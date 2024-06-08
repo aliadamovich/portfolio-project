@@ -16,7 +16,7 @@ export const Cv = () => {
 	const extra = ['Bootstrap, Materialize', 'Stylus, Sass, Less', 'Gulp, Webpack, Grunt', 'GIT Knowledge']
 	
 	return (
-			<StyledCv isOpen={true}>
+			<StyledCv isOpen={false}>
 				<Info />
 				<Progress title='Languages' knowledge={languages}/>
 				<Progress title='Skills' knowledge={skills}/>

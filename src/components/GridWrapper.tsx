@@ -8,12 +8,7 @@ type GridWrapperPropsType = {
 
 export const GridWrapper = styled.div<GridWrapperPropsType>`
 	display: grid;
-	/* grid-template-columns: ${props => props.gtc || 'repeat(3, 1fr)'}; */
 	grid-template-columns: ${props => props.gtc || 'repeat(auto-fit,minmax(250px, 1fr))'};
 	gap: ${props => props.gap || '20px'};
 
-
-	/* @media screen and (max-width:1200px) and (min-width:993px){
-		grid-template-columns: repeat(2, 1fr);
-	}; */
 `

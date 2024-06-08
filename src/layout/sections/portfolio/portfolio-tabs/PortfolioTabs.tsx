@@ -18,8 +18,11 @@ export const PortfolioTabs = () => {
 }
 
 const StyledPortfolioTabs = styled.ul`
-	margin-bottom: 50px;
+	margin-bottom: 35px;
+	padding-bottom: 15px;
 	text-align: center;
+	overflow: auto;
+	white-space: nowrap;
 	li {
 		display: inline-block;
 		&:hover{

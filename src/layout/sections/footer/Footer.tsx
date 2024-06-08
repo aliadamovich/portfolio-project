@@ -7,7 +7,7 @@ import { theme } from '../../../styles/Theme'
 export function Footer() {
 	return (
 		<StyledFooter>
-			<FlexWrapper justify='space-between' wrap='wrap'>
+			<FlexWrapper justify='space-between' wrap='wrap' gap='20px' align='center'>
 				<Icon iconId='g-1' width="128" height="89" viewBox="0 0 128 89"/>
 				<Icon iconId='g-2' width="124" height="102" viewBox="0 0 124 102" />
 				<Icon iconId='g-3' width="134" height="84" viewBox="0 0 134 84" />
@@ -23,13 +23,17 @@ export function Footer() {
 
 const StyledFooter = styled.footer`
 	margin-top: 95px;
-	
-	@media screen and (max-width:425px){
-		&:first-child{
-			justify-content: center;
-			border: 1px solid red;
-		}
+
+		 ${FlexWrapper} {
+			svg {
+				width: 140px;
+				flex-grow: 1;
+			}
 	};
+
+	 @media ${theme.media.mobile} {
+		margin-top: 70px;
+	 }
 `
 const Copyright = styled.div`
 	background-color: ${theme.colors.sectionsBg};
@@ -39,7 +43,12 @@ const Copyright = styled.div`
 	justify-content: center;
 	padding: 14px 10px;
 	margin-top: 95px;
+
+	@media ${theme.media.mobile} {
+		margin-top: 70px;
+	 }
 `
+
 const Small = styled.small`
 	color: ${theme.colors.boldFont};
 `

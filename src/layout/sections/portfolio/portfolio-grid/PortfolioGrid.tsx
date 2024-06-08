@@ -65,4 +65,5 @@ const GridItem = styled.a`
 		object-fit: cover;
 		aspect-ratio: 1 / 1;
 	}
+
 `

@@ -8,7 +8,7 @@ import { FlexWrapper } from '../../../components/FlexWrapper'
 export function Contact() {
 	return (
 		<StyledContact>
-			<FlexWrapper gap='30px' wrap='wrap'>
+			<FlexWrapper gap='30px' wrap='wrap-reverse'>
 				<ContactForm />
 				<ContactInfo />
 			</FlexWrapper>
@@ -18,8 +18,5 @@ export function Contact() {
 }
 
 const StyledContact = styled.section`
-	/* display: grid; 
-	grid-template: auto 300px / 1fr 370px;
-	column-gap: 30px;
-	row-gap: 70px; */
+
 `

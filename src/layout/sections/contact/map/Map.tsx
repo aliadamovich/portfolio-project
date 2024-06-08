@@ -15,6 +15,6 @@ const StyledMap = styled.div`
 	margin-top: 70px;
 	height: 300px;
 	iframe {
-		border: 1px solid ${theme.colors.sectionsBg};
+		border: none;
 	}
 `

@@ -6,20 +6,10 @@ import styled, { css } from 'styled-components';
 import { Button } from '../../../components/button/Button';
 import { theme } from '../../../styles/Theme';
 import bg_img from './../../../assets/images/bg_items.svg'
+import bg_img_mobile from './../../../assets/images/bg_img_mobile.svg';
+import { font } from '../../../styles/Mixin';
 
-type BgRoundElementsPropsType = {
-	top: string
-	left: string
-	color?: string
-	before?: string
-}
 
-type BgSquareElementsPropsType = {
-	top: string
-	left: string
-	color?: string
-	before?: string
-}
 export const Main = () => {
 	return (
 		<MainSection>
@@ -46,17 +36,16 @@ export const Main = () => {
 
 const MainSection = styled.section`
 	background: ${theme.colors.sectionsBg};
-	padding: 0px 60px;
 	position: relative;
-	background: url(${bg_img}) ${theme.colors.sectionsBg} center/contain no-repeat;
+	background: url(${bg_img}) ${theme.colors.sectionsBg} center no-repeat;
 
-	@media ${theme.media.first} {
-		padding: 0 20px;
-	};
+	@media ${theme.media.mobile} {
+		background: url(${bg_img_mobile}) ${theme.colors.sectionsBg} center 60px no-repeat;
+	}
 `
 const MainWrapper = styled.div`
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-evenly;
 
 	@media ${theme.media.tablet} {
 		flex-direction: column;
@@ -64,26 +53,23 @@ const MainWrapper = styled.div`
 	}
 `
 const MainContent = styled.div`
-	padding: 95px 0 15px 0;
-	flex: 1 1 auto;
+	max-width: 525px;
+	padding: 95px 10px 20px 15px;
 
 	@media ${theme.media.tablet} {
-		padding: 120px 0 15px 0;
+		max-width: none;
+		padding: 120px 10px 20px 15px;
 	}
 	
 	button {
 		height: 51px;
 		border-radius: 5px;
 	}
-
 `
 
 const MainTitle = styled.h1`
-	font-size: 48px;
-	font-weight: 700;
-	line-height: 123.6%;
-	color: ${theme.colors.boldFont};
-	font-size: calc( (min(100vw, 1440px) - 320px)/(1440 - 320) * (48 - 30) + 30px);
+	${font({ weight: 700, color: theme.colors.boldFont, lineHeight: 1.24, fMax:48, fMin: 30 })}
+
 	span {
 		color: ${theme.colors.accent}
 	}
@@ -92,15 +78,10 @@ const MainTitle = styled.h1`
 const MainText = styled.p`
 	font-size: 16px;
 	margin: 18px 0 42px 0;
-	max-width: 480px;
-
-	@media ${theme.media.tablet} {
-		max-width: none;
-	}
 `
 const MainImgWrapper = styled.div`
-
-	flex: 0 0 39%;
+	min-width: 325px;
+	/* flex: 0 0 39%; */
 	img {
 		width: 100%;
 		height: 100%;
@@ -114,8 +95,8 @@ const BurgerMenuButton = styled.button<{isOpen:boolean}>`
 	position: absolute;
 	width: 30px;
 	height: 18px;
-	top: 5%;
-	left: 5%;
+	top: 35px;
+	left: 15px;
 	z-index: 10002;
 
 	@media ${theme.media.smallScreen} {
