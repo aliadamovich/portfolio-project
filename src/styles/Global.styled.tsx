@@ -28,7 +28,7 @@ export const GlobalStyles = createGlobalStyle`
 
 	* {
 		scrollbar-width: thin; 
-		scrollbar-color: ${theme.colors.mainFont} ${theme.colors.mainBg} 
+		scrollbar-color: ${theme.colors.mainFont} ${theme.colors.mainBg}
 	}
 
 	body {
@@ -41,9 +41,10 @@ export const GlobalStyles = createGlobalStyle`
 		line-height: 160%;
 		background-color: ${theme.colors.mainBg};
 		color: ${theme.colors.mainFont};
+		min-width: 375px;
 	}
 	
-	a { 
+	a {
 		text-decoration: none;
 		&:hover{
 			text-decoration: none;

@@ -48,8 +48,20 @@ const StyledHeader = styled.header`
 		gap: 100px;
 	}
 
-	@media screen and (max-width:425px){
-		display: none;
+	@media ${theme.media.mobile} {
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		position: static;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		width: 100%;
+		max-width: 100%;
+		height: 80px;
+		gap: 25px;
+		padding: 0;
+		min-height: 80px;
 	}
 `
 

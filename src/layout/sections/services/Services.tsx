@@ -27,7 +27,7 @@ export default Services
 
 const ServicesSection = styled.section`
 	h2 {
-		margin-top: 138px;
+		margin-top: calc( (min(100vw,1440px) - 320px)/(1440 - 320) * (138 - 86) + 86px);
 	}
 	>p {
 		margin-bottom: 64px;

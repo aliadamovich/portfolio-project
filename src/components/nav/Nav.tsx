@@ -51,27 +51,37 @@ const ToolTip = styled.span`
 		left: 50%;
 		transform: translateX(-50%);
 	}
+
+	@media ${theme.media.mobile} {
+		display: none;
+	}
 `
 
 const StyledMenu = styled.nav`
 
-ul {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 42px;
-	margin: 0px auto;
+	ul {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 42px;
+		margin: 0px auto;
 
-	li {
-		position: relative;
+		li {
+			position: relative;
 
-		&:hover{
-			${ToolTip} {
-				transform: translate(-50% ,0 );
-				visibility: visible;
-				opacity: 1;
+			&:hover{
+				${ToolTip} {
+					transform: translate(-50% ,0 );
+					visibility: visible;
+					opacity: 1;
+				}
 			}
 		}
+
+		@media ${theme.media.mobile} {
+		flex-direction: row;
+		gap: 10px;
 	}
-}
+	}
+	
 `
