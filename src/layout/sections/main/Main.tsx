@@ -1,7 +1,8 @@
 import React from 'react';
 import hero from './../../../assets/images/main_img.png';
 import hero_webp from './../../../assets/images/main_img.webp';
-import { FlexWrapper } from '../../../components/FlexWrapper';
+import hero2x from './../../../assets/images/hero@2.png';
+import hero3x from './../../../assets/images/hero@3.png';
 import styled, { css } from 'styled-components';
 import { Button } from '../../../components/button/Button';
 import { theme } from '../../../styles/Theme';
@@ -21,11 +22,13 @@ export const Main = () => {
 					<MainTitle>I’m Rayan Adlrdard <span>Front-end</span> Developer</MainTitle>
 					<MainText>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat feugiat placerat lobortis. Natoque rutrum semper sed suspendisse nunc lectus.</MainText>
 					<Button text='HIRE ME' isIcon={true} iconId='arrow-right' width='11' height='11' viewBox='0 0 11 11' />
+					{/* <Button text='HIRE ME' isIcon={true} iconId='arrow-top' width='32' height='32' viewBox='0 0 32 32' /> */}
 				</MainContent>
 				<MainImgWrapper >
 					<picture>
+						<source srcSet={`${hero2x} 2x, ${hero3x} 3x`}type="image/png" />
 						<source srcSet={hero_webp} type='image/webp'/>
-						<source srcSet={hero} type='image/jpeg'/>
+						<source srcSet={hero} type='image/png'/>
 						<img src={hero} alt="main photo" />
 					</picture>
 				</MainImgWrapper>
@@ -64,6 +67,9 @@ const MainContent = styled.div`
 	button {
 		height: 51px;
 		border-radius: 5px;
+		&:hover{
+			
+		}
 	}
 `
 
@@ -81,13 +87,11 @@ const MainText = styled.p`
 `
 const MainImgWrapper = styled.div`
 	min-width: 325px;
-	/* flex: 0 0 39%; */
 	img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
 	}
-
 `
 
 const BurgerMenuButton = styled.button<{isOpen:boolean}>`

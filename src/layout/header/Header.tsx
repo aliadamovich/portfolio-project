@@ -66,6 +66,9 @@ const StyledHeader = styled.header`
 `
 
 const MoonButton = styled.button`
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	color: ${theme.colors.boldFont};
 	&:hover{
 		color: ${theme.colors.accent};

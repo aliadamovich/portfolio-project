@@ -31,5 +31,4 @@ export const Portfolio = () => {
 }
 
 const StyledPortfolioSection = styled.section`
-	
 `
