@@ -6,13 +6,13 @@ import { GridWrapper } from '../../../../components/GridWrapper';
 
 
 
-export const PortfolioGrid = (props: { gridImages: Array<string> } ) => {
+export const PortfolioGrid = (props: { portfolioWorks: {src: string, filter: string}[] } ) => {
 
 	return (
 		<GridWrapper>
-			{props.gridImages.map((i, index) => {
-				return <GridItem key={index} href="#">
-									<img src={i} alt="portfolio project" />
+			{props.portfolioWorks.map((work, index) => {
+				return <GridItem key={index}>
+									<img src={work.src} alt="portfolio project" />
 								</GridItem>
 			}
 			)}
@@ -21,10 +21,10 @@ export const PortfolioGrid = (props: { gridImages: Array<string> } ) => {
 }
 
 
-const GridItem = styled.a`
+const GridItem = styled.div`
 	position: relative;
 	z-index: 0;
-	
+	cursor: pointer;
 	&:hover{
 		&::before,
 		&::after {

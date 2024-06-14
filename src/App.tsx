@@ -20,7 +20,7 @@ import { Particle } from './components/particle/Particle';
 function App() {
     return (
 			<StyledApp>
-				<Particle/>
+				{/* <Particle/> */}
 				<Wrapper>
 					<Header />
 					<Cv />

@@ -24,7 +24,6 @@ const Services: React.FC = () => {
 
 export default Services
 
-
 const ServicesSection = styled.section`
 	position: relative;
 	h2 {

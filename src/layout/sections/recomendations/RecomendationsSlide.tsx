@@ -1,5 +1,5 @@
 import React from 'react'
-import { Icon } from '../../icon/Icon'
+import { Icon } from '../../../components/icon/Icon'
 import styled from 'styled-components'
 import { theme } from '../../../styles/Theme'
 
@@ -9,18 +9,19 @@ type SlidePropsType = {
 	photo: string
 	name: string
 	job: string
+	rating: number
 }
 
 
-export function Slide(props: SlidePropsType) {
+export const RecomendationsSlide: React.FC<SlidePropsType> = (props: SlidePropsType) => {
 	return (
 		<SlideBody>
 			<Rating>
-				<Icon iconId='star' width='18' height='18' viewBox='0 0 18 18' fill={theme.colors.accent}/>
-				<Icon iconId='star' width='18' height='18' viewBox='0 0 18 18' fill={theme.colors.accent}/>
-				<Icon iconId='star' width='18' height='18' viewBox='0 0 18 18' fill={theme.colors.accent}/>
-				<Icon iconId='star' width='18' height='18' viewBox='0 0 18 18' fill={theme.colors.accent}/>
-				<Icon iconId='star' width='18' height='18' viewBox='0 0 18 18' fill={theme.colors.accent}/>
+				{
+					[...Array(props.rating)].map((_, i) =>
+						<Icon iconId='star' width='18' height='18' viewBox='0 0 18 18' fill={theme.colors.accent} key={i} />
+					)
+				}
 			</Rating>
 			<Title>{props.title}</Title>
 			<Review>{props.review}</Review>
@@ -36,8 +37,8 @@ export function Slide(props: SlidePropsType) {
 }
 
 const SlideBody = styled.div`
-background-color: ${theme.colors.sectionsBg};
-padding: 25px;
+	background-color: ${theme.colors.sectionsBg};
+	padding: 25px;
 `
 
 const Rating = styled.div`

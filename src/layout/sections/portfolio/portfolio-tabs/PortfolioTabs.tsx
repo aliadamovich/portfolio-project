@@ -1,21 +1,40 @@
 import React from 'react'
-import styled from 'styled-components'
-import { FlexWrapper } from '../../../../components/FlexWrapper'
+import styled, { css } from 'styled-components'
 import { theme } from '../../../../styles/Theme'
 
-export const PortfolioTabs = () => {
+type PortfolioTabsPropsType = {
+	tabsData: Array<{ title: string, status: 'all' | 'ui' | 'web' | 'logo' | 'branding' }>
+	onTabClick: (param: 'all' | 'ui' | 'web' | 'logo' | 'branding') => void
+	currentFilterStatus: string
+}
+
+
+export const PortfolioTabs = (props: PortfolioTabsPropsType) => {
 	return (
 
 		<StyledPortfolioTabs>
-			<li><a href="#">All categories</a></li>
-			<li><a href="#">UI Design</a></li>
-			<li><a href="#">Web Templates</a></li>
-			<li><a href="#">Logo</a></li>
-			<li><a href="#">Branding</a></li>
+			{props.tabsData.map(tab => {
+				return <li>
+								<TabButton active={tab.status === props.currentFilterStatus} 
+														onClick={() => { props.onTabClick(tab.status) }}>{tab.title}
+								</TabButton>
+							</li>
+			})}
 		</StyledPortfolioTabs>
 
 	)
 }
+const TabButton = styled.button<{active: boolean}>`
+	transition: all 0.3s ease 0s;
+	font-size: 18px;
+	font-weight: 500;
+	color: ${theme.colors.boldFont};
+	line-height: 2;
+
+	${props => props.active && css<{ active: boolean }>`
+	color: ${ theme.colors.accent };
+	`}
+`
 
 const StyledPortfolioTabs = styled.ul`
 	margin-bottom: 35px;
@@ -26,12 +45,12 @@ const StyledPortfolioTabs = styled.ul`
 	li {
 		display: inline-block;
 		&:hover{
-			a{
+			${TabButton} {
 				color: ${theme.colors.accent};
 			}
 		}
 	
-		& + li {
+	& + li {
 			margin-left: 37px;
 
 			@media ${theme.media.tablet} {
@@ -39,12 +58,6 @@ const StyledPortfolioTabs = styled.ul`
 			}
 		}
 
-		a {
-			transition: all 0.3s ease 0s;
-			font-size: 18px;
-			font-weight: 500;
-			color: ${theme.colors.boldFont};
-			line-height: 2;
-		}
 }
 `
+

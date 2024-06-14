@@ -48,7 +48,6 @@ export const PriceCard = (props: PriceCardPropsType) => {
 										</OptionsList>
 					})}
 			</StyledList>
-			{/* <PriceButton className={ `${props.isPopular && 'popular'}` } >order now</PriceButton> */}
 			<Button rounded text='order now' />
 		</StyledCard>
 	)
@@ -118,28 +117,3 @@ const PopularLabel = styled.span<PopularLabelPropsType>`
 	text-align: center;
 	padding: 3px;
 `
-// const PriceButton = styled.button`
-// 	height: 38px;
-// 	border-radius: 30px;
-// 	box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.15);
-// 	padding: 2px 40px;
-// 	text-transform: uppercase;
-// 	color: ${theme.colors.boldFont};
-// 	font-size: 14px;
-// 	font-weight: 700;
-// 	margin: 0px auto;
-// 	background-color: ${theme.colors.sectionsBg};
-// 	transition: all 0.3s ease 0s;
-// 	display: flex;
-// 	align-items: center;
-// 	justify-content: center;
-// 	&:hover{
-// 		background-color: ${theme.colors.accent};
-// 		color: ${theme.colors.boldFont};
-// 	}
-
-// 	&.popular {
-// 	background-color: ${theme.colors.accent}
-// 	}
-
-// `
