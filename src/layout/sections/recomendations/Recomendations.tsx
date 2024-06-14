@@ -15,6 +15,7 @@ export function Recomendations() {
 }
 
 const RecomendationsSection = styled.section`
+	position: relative;
 	h2 {
 		margin: 65px 0 25px;
 	}

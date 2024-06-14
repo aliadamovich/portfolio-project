@@ -9,11 +9,10 @@ type ProgressPropsType = {
 }
 
 
-export const Progress = (props: ProgressPropsType) => {
+export const Progress: React.FC<ProgressPropsType> = (props: ProgressPropsType) => {
 	return (
 		<CvContainer>
 			<h3>{props.title}</h3>
-
 			{
 				props.knowledge.map((l, index) => {
 					return <ProgressBarContainer key={index}>
@@ -25,7 +24,6 @@ export const Progress = (props: ProgressPropsType) => {
 					</ProgressBarContainer>
 				})
 			}
-
 		</CvContainer>
 	)
 }

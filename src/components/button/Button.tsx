@@ -23,7 +23,6 @@ export const Button = (props: ButtonPropsType) => {
 															width={props.width} 
 															viewBox={props.viewBox} 
 															fill='currentColor'/>}
-
 		</StyledButton>
 	)
 }

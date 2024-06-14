@@ -18,5 +18,5 @@ export function Contact() {
 }
 
 const StyledContact = styled.section`
-
+	position: relative;
 `

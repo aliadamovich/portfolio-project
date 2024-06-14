@@ -5,7 +5,7 @@ import { ServiceCard } from './service-card/ServiceCard'
 import { GridWrapper } from '../../../components/GridWrapper'
 import styled from 'styled-components'
 
-const Services = () => {
+const Services: React.FC = () => {
 	return (
 		<ServicesSection>
 			<SectionTitle>my services</SectionTitle>
@@ -26,6 +26,7 @@ export default Services
 
 
 const ServicesSection = styled.section`
+	position: relative;
 	h2 {
 		margin-top: calc( (min(100vw,1440px) - 320px)/(1440 - 320) * (138 - 86) + 86px);
 	}

@@ -2,10 +2,9 @@ import React from 'react'
 import { Icon } from '../../../../../components/icon/Icon'
 import { SvgLink } from '../../../../../components/svg-link/SvgLink'
 import styled from 'styled-components'
-import { theme } from '../../../../../styles/Theme'
 
 
-export const IconsRow = (props: { icons: { href: string, id: string, svg: string }[] }) => {
+export const IconsRow: React.FC<{ icons: { href: string, id: string, svg: string }[] }> = (props: { icons: { href: string, id: string, svg: string }[] }) => {
 	return (
 		<StyledList>
 			{
@@ -21,6 +20,7 @@ export const IconsRow = (props: { icons: { href: string, id: string, svg: string
 
 const StyledList = styled.ul`
 	display: flex;
+	justify-content: center;
 	gap: 12px;
 	margin-bottom: 25px;
 `

@@ -5,14 +5,14 @@ import { SectionTitle } from '../../components/SectionTitle'
 import { SectionDescription } from '../../components/SectionDescription'
 import { theme } from '../../styles/Theme'
 
-export function Education() {
+export const Education: React.FC = () => {
 	return (
 		<StyledEducation>
 			<SectionTitle>Education</SectionTitle>
 			<SectionDescription>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum</SectionDescription>
 			
 			<PeriodWrapper>
-				<Period 
+				<Period
 					placeTitle='University of Toronto'
 					placeDescription='Student'
 					label='Jan 1016 - Dec 2021'
@@ -37,6 +37,7 @@ export function Education() {
 }
 
 const StyledEducation = styled.section`
+	position: relative;
 `
 
 const PeriodWrapper = styled.div`

@@ -22,6 +22,7 @@ export function Footer() {
 }
 
 const StyledFooter = styled.footer`
+	position: relative;
 	margin-top: 95px;
 
 		 ${FlexWrapper} {

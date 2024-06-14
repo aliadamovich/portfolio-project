@@ -2,9 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { Icon } from '../../../../components/icon/Icon'
 import { theme } from '../../../../styles/Theme'
-import { Label } from '../../../../components/Label'
 import { Button } from '../../../../components/button/Button'
-
 
 type PriceCardPropsType = {
 	rate: string

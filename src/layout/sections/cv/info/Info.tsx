@@ -3,11 +3,9 @@ import mini from '../../../../assets/images/main_mini.jpeg'
 import styled from 'styled-components'
 import { IconsRow } from './icons-row/IconsRow'
 import { DataInfo } from './data-info/DataInfo'
-import { theme } from '../../../../styles/Theme'
-import { Cv } from '../Cv'
 import { CvContainer } from '../CvContainer'
 
-export const Info = () => {
+export const Info: React.FC = () => {
 
 	const icons = [
 		{ id: 'facebook', href: 'https://facebook.com', svg: 'facebook' },
@@ -48,7 +46,6 @@ const StyledPhoto = styled.div`
 	position: relative;
 	width: 150px;
 	height: 150px;
-	border: 1px dashed #cdcccc;
 	margin: 0px auto 30px auto;
 	&::after{
 	content: '';

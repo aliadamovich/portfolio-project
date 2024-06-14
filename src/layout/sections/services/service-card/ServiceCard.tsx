@@ -10,16 +10,12 @@ type ServiceCardPropsType = {
 	description: string
 }
 
-export const ServiceCard = (props: ServiceCardPropsType) => {
+export const ServiceCard: React.FC<ServiceCardPropsType> = (props: ServiceCardPropsType) => {
 	return (
 		<CardBody>
 			<Icon iconId={props.iconId} fill={theme.colors.accent} width='78' height='78' viewBox='0 0 78 78'/>
 			<Title>{props.name}</Title>
 			<ServiceDescription>{props.description}</ServiceDescription>
-			{/* <Link href='#'>
-				<span>order now</span>
-				<Icon iconId='link-right' width="18" height="18" viewBox="0 0 18 18" fill={theme.colors.accent} />
-			</Link> */}
 			<YellowLink text='order now'/>
 		</CardBody>
 	)

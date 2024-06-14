@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { SectionTitle } from '../../../components/SectionTitle'
 import { SectionDescription } from '../../../components/SectionDescription'
-import { Nav } from '../../../components/nav/Nav'
 import { PortfolioGrid } from './portfolio-grid/PortfolioGrid'
 import { PortfolioTabs } from './portfolio-tabs/PortfolioTabs';
 import img1 from '../../../assets/images/portfolio/img-1.jpeg';
@@ -31,4 +30,5 @@ export const Portfolio = () => {
 }
 
 const StyledPortfolioSection = styled.section`
+	position: relative;
 `
