@@ -7,7 +7,7 @@ import { GridWrapper } from '../../../components/GridWrapper'
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { Slider } from '../../../components/slider/Slider'
-
+import { Fade } from "react-awesome-reveal";
 
 const data = [
 	{
@@ -62,13 +62,16 @@ const priceItems = data.map(el => {
 	return <PriceCard options={el.options} rate={el.rate} price={el.price}
 		description={el.description}
 		isPopular={el.popular} />
+
 })
 
 export const Price: React.FC = () => (
 	<StyledPriceSection>
 		<SectionTitle>price plans</SectionTitle>
 		<SectionDescription>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum</SectionDescription>
-		<Slider items={priceItems} disableDotsControls={true} />
+		<Fade cascade >
+			<Slider items={priceItems} disableDotsControls={true} />
+		</Fade>
 	</StyledPriceSection>
 );
 

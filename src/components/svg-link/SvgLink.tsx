@@ -2,53 +2,71 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { Icon } from '../icon/Icon'
 import { theme } from '../../styles/Theme'
-
+import { Link as ScrollLink } from 'react-scroll';
+import { S } from './../../components/nav/Nav_Styles';
 type SvgLinkPropsType = {
 	iconId: string
 	width?: string
 	height?: string
 	viewBox?: string
 	fill?: string
-	href?: string
+	href: string
 	secondary?: boolean
+	name?: string
 }
 
-type LinkProps = {
+type LinkPropsType = {
 	secondary?: boolean
 }
 
 export const SvgLink = (props: SvgLinkPropsType) => {
+
 	return (
-			<Link href={props.href} secondary={props.secondary}>
-				<Icon iconId={props.iconId}
-				width={props.width} 
-				height={props.height} 
-				viewBox={props.viewBox} 
-				fill='currentColor'/>
-			</Link>
+			<LinkItem secondary={props.secondary}>
+			{
+			props.secondary ? 
+			<>
+						<NavLink to={props.href} smooth={true} activeClass="active" spy={true} >
+						<Icon iconId={props.iconId} width={props.width} height={props.height} viewBox={props.viewBox} fill='currentColor' />
+				</NavLink>
+				<S.ToolTip>{props.name}</S.ToolTip>
+			</>
+			: 
+					<NavLink as='a' href={props.href} target="_blank">
+					<Icon iconId={props.iconId} width={props.width} height={props.height} viewBox={props.viewBox} fill='currentColor' />
+				</NavLink>
+		}
+				
+			</LinkItem>
 	)
 }
+const LinkItem = styled.li<LinkPropsType>`
 
-const Link = styled.a<LinkProps>`
-		background-color: ${theme.colors.accent};
-		color: ${theme.colors.boldFont};
-		border-radius: 50%;
-		padding: 6px;
-		display: inline-flex;
-		justify-content: center;
-		align-items: center;
-		transition: all 0.2s ease 0s;
-		&:hover{
-			background-color: ${theme.colors.iconBg};
-		}
-
-		${props => props.secondary && css`
+	${props => props.secondary && css`
+		${NavLink} {
 			background-color: ${theme.colors.iconBg};
 			padding: 11px;
 			color: ${theme.colors.mainFont};
-			&:hover{
+
+			&:hover, 
+			&.active {
 				background-color: ${theme.colors.accent};
 				color: ${theme.colors.boldFont};
 			}
+		}
 	`}
+`
+const NavLink = styled(ScrollLink)`
+	background-color: ${theme.colors.accent};
+	color: ${theme.colors.boldFont};
+	border-radius: 50%;
+	padding: 6px;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.2s ease 0s;
+	cursor: pointer;
+	&:hover{
+		background-color: ${theme.colors.iconBg};
+	}
 `

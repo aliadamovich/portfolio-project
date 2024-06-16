@@ -12,7 +12,7 @@ import Typewriter from 'typewriter-effect';
 
 export const Main: React.FC = () => {
 	return (
-		<S.MainSection>
+		<S.MainSection id='home'>
 			<S.MainWrapper >
 				<S.MainContent>
 					<S.MainTitle as={'p'}>I’m Rayan Adlrdard </S.MainTitle>

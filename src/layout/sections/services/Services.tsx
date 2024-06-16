@@ -1,35 +1,41 @@
 import React from 'react'
 import { SectionTitle } from '../../../components/SectionTitle'
 import { SectionDescription } from '../../../components/SectionDescription'
-import { ServiceCard } from './service-card/ServiceCard'
 import { GridWrapper } from '../../../components/GridWrapper'
-import styled from 'styled-components'
+import { Fade } from "react-awesome-reveal";
+import { theme } from '../../../styles/Theme'
+import { Icon } from '../../../components/icon/Icon'
+import { YellowLink } from '../../../components/yellow-link/YellowLink'
+import {S} from './Services_Styles'
 
-const Services: React.FC = () => {
+const servicesData = [
+	{ icon: 's-1', name: 'web development', description: 'blog, e-commerce' },
+	{ icon: 's-2', name: 'uI/uX design', description: 'Mobile app, website design' },
+	{ icon: 's-6', name: 'sound design', description: 'Voice Over, Beat Making' },
+	{ icon: 's-3', name: 'game design', description: 'Character Design, Props & Objects' },
+	{ icon: 's-4', name: 'photography', description: 'portrait, product photography' },
+	{ icon: 's-5', name: 'advertising', description: 'lorem ipsum amet' },
+]
+
+export const Services: React.FC = () => {
 	return (
-		<ServicesSection>
+		<S.ServicesSection id='services'>
 			<SectionTitle>my services</SectionTitle>
 			<SectionDescription>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum</SectionDescription>
-			<GridWrapper>
-				<ServiceCard iconId='s-1' name="web development" description='blog, e-commerce'/>
-				<ServiceCard iconId='s-2' name="uI/uX design" description='Mobile app, website design'/>
-				<ServiceCard iconId='s-6' name="sound design" description='Voice Over, Beat Making'/>
-				<ServiceCard iconId='s-3' name="game design" description='Character Design, Props & Objects'/>
-				<ServiceCard iconId='s-4' name="photography" description='portrait, product photography'/>
-				<ServiceCard iconId='s-5' name="advertising" description='lorem ipsum amet'/>
-			</GridWrapper>
-		</ServicesSection>
+				<GridWrapper >
+				<Fade cascade damping={0.2}>
+					{
+						servicesData.map(s=> {
+							return <S.CardBody >
+											<Icon iconId={s.icon} fill={theme.colors.accent} width='78' height='78' viewBox='0 0 78 78' />
+											<S.Title>{s.name}</S.Title>
+											<S.ServiceDescription>{s.description}</S.ServiceDescription>
+											<YellowLink text='order now' />
+										</S.CardBody>
+						})
+					}
+					</Fade>
+				</GridWrapper>
+		</S.ServicesSection>
 	)
 }
-
-export default Services
-
-const ServicesSection = styled.section`
-	position: relative;
-	h2 {
-		margin-top: calc( (min(100vw,1440px) - 320px)/(1440 - 320) * (138 - 86) + 86px);
-	}
-	>p {
-		margin-bottom: 64px;
-	}
-`

@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { theme } from '../../../../styles/Theme'
 import { CvContainer } from '../CvContainer'
-
+import ProgressBar  from "@ramonak/react-progress-bar";
+import './progress.css'
 type ProgressPropsType = {
 	knowledge: {skill: string, value: string}[]
 	title: string
@@ -20,7 +21,17 @@ export const Progress: React.FC<ProgressPropsType> = (props: ProgressPropsType) 
 							<span>{l.skill}</span>
 							<span>{l.value}%</span>
 						</label>
-						<ProgressBar id={l.value} value={l.value} max='100' />
+						<ProgressBar 
+							animateOnRender={true}
+							transitionDuration="1.5s"
+							completed={l.value} 
+							height="3px" 
+							bgColor={theme.colors.accent} 
+							baseBgColor={theme.colors.sectionsBg} 
+							isLabelVisible={false}
+							className="wrapper"
+							barContainerClassName="container"
+							/>
 					</ProgressBarContainer>
 				})
 			}
@@ -40,28 +51,3 @@ const ProgressBarContainer = styled.div`
 	}
 `
 
-const ProgressBar = styled.progress`
-	box-sizing: border-box;
-	display: block;
-	border-radius: 4px;
-	width: 220px;
-	height: 6px;
-	border: 1px solid ${theme.colors.accent};
-	padding: 1px;
-	background-color: ${theme.colors.sectionsBg};
-
-	&::-webkit-progress-bar{
-		background-color: #ffffff;
-		border-radius: 6px;
-	}
-	&::-webkit-progress-value {
-		background-color: ${theme.colors.accent};
-		border-radius: 6px;
-	}
-
-	&::-moz-progress-bar {
-		background-color: ${theme.colors.accent};
-		border-radius: 6px;
-	}
-
-`

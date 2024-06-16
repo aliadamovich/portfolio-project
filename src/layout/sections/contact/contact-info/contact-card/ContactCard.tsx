@@ -9,6 +9,7 @@ import { SvgLink } from '../../../../../components/svg-link/SvgLink';
 type ContactCardProps = {
 	options: { name: string; value: string, href: string }[]
 	iconId: string
+	href: string
 };
 
 export function ContactCard(props: ContactCardProps) {
@@ -16,36 +17,35 @@ export function ContactCard(props: ContactCardProps) {
 	
 	return (
 		<StyledCard>
-			<SvgLink iconId={props.iconId} width="18" height="18" viewBox="0 0 18 18" />
+			<SvgLink href={props.href} iconId={props.iconId} width="18" height="18" viewBox="0 0 18 18" />
 
 			{props.options.map((o, i) => {
 				return <Row key={i}>
 								<Name>{o.name}</Name>
-					<Value target='_blank' href={o.href}>{o.value}</Value>
+								<Value target='_blank' href={o.href}>{o.value}</Value>
 							</Row>
 			})}
 		</StyledCard>
 	)
 }
 
-const StyledCard = styled.div`
+const StyledCard = styled.ul`
 	background-color: ${theme.colors.sectionsBg};
 	padding: 25px 25px 16px;
 	text-align: center;
-	& + div {
+	& + ul {
 		margin-top: 15px;
 	}
 
-	>a {
-		padding: 11px;
+	>*:first-child {
 		margin-bottom: 30px;
-	}
+	} 
 `
-const Row = styled.div`
+const Row = styled.li`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	& + div {
+	& + li {
 		margin-top: 16px;
 	}
 `

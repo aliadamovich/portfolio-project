@@ -49,7 +49,7 @@ const Aside = styled.aside<{ isOpen: boolean }>`
 		bottom: 0;
 		background-color: #5a5a5a68;
 		z-index: 10000;
-		transition: all 0.3s ease 0s;
+		transition: all 1s ease 0s;
 		opacity: 0;
 		visibility: hidden;
 	}

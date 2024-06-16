@@ -1,0 +1,11 @@
+.wrapper {
+	border: 1px solid #ffb400;
+	border-radius: 4px;
+	width: 220px;
+}
+
+.container {
+	padding: 1px;
+	border-radius: 4px;
+}
+

@@ -36,6 +36,7 @@ const StyledDataItem = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	gap: 10px;
 `
 
 const Value = styled.span<ValuePropsType>`

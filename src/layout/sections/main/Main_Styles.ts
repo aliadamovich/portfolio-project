@@ -27,6 +27,8 @@ const MainContent = styled.div`
 	max-width: 525px;
 	padding: 95px 10px 20px 15px;
 
+	overflow-x: hidden;
+
 	@media ${theme.media.tablet} {
 		max-width: none;
 		padding: 120px 10px 20px 15px;
@@ -54,7 +56,7 @@ const MainText = styled.p`
 	margin: 18px 0 42px 0;
 `
 const MainImgWrapper = styled.div`
-	min-width: 325px;
+	min-width: 270px;
 
 	picture {
 		display: flex;

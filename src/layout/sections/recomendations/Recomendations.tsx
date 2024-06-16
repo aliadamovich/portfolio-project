@@ -6,7 +6,7 @@ import { RecomendationsSlide } from './RecomendationsSlide';
 import review1 from '../../../assets/images/review_1.jpeg';
 import review2 from '../../../assets/images/review_2.jpeg';
 import review3 from '../../../assets/images/review_3.jpeg';
-
+import { Fade } from "react-awesome-reveal";
 
 const reviewsItems = [
 	<RecomendationsSlide
@@ -62,7 +62,10 @@ export function Recomendations() {
 		<RecomendationsSection>
 			<SectionTitle>Recomendations</SectionTitle>
 			<SectionDescription>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum</SectionDescription>
-			<Slider items={reviewsItems}/>
+			<Fade cascade >
+				<Slider items={reviewsItems} />
+			</Fade>
+			
 		</RecomendationsSection>
 	)
 }

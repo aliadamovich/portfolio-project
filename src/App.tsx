@@ -4,7 +4,7 @@ import { Cv } from './layout/sections/cv/Cv';
 import { Main } from './layout/sections/main/Main';
 import { Portfolio } from './layout/sections/portfolio/Portfolio';
 import { Price } from './layout/sections/price/Price';
-import Services from './layout/sections/services/Services';
+import {Services} from './layout/sections/services/Services';
 import { Recomendations } from './layout/sections/recomendations/Recomendations';
 import { Education } from './layout/education/Education';
 import { Work } from './layout/sections/work/Work';

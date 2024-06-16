@@ -7,7 +7,7 @@ import { FlexWrapper } from '../../../components/FlexWrapper'
 
 export function Contact() {
 	return (
-		<StyledContact>
+		<StyledContact id='contact'>
 			<FlexWrapper gap='30px' wrap='wrap-reverse'>
 				<ContactForm />
 				<ContactInfo />

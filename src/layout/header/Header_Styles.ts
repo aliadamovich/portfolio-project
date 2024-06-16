@@ -12,17 +12,18 @@ const Header = styled.header`
 	max-width: 105px;
 	width: 100%;
 	min-height: 100vh;
-	height: 100%;
+	height: 100vh;
 	padding: 48px 2px;
 	display: flex;
 	flex-direction: column;
-	gap: 208px;
+	gap: 40px;
+	gap: calc( (min(100vw,1440px) - 576px)/(1440 - 576) * (125 - 55) + 55px);
 	background-color: ${theme.colors.headerBg};
-	overflow: hidden;
-
+	overflow-x: hidden;
+	overflow-y: auto;
+	
 	@media ${theme.media.first} {
 		max-width: 75px;
-		gap: 100px;
 	}
 
 	@media ${theme.media.mobile} {

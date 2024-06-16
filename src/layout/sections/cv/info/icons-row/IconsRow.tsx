@@ -5,13 +5,12 @@ import styled from 'styled-components'
 
 
 export const IconsRow: React.FC<{ icons: { href: string, id: string, svg: string }[] }> = (props: { icons: { href: string, id: string, svg: string }[] }) => {
+
 	return (
 		<StyledList>
 			{
 				props.icons.map(el => {
-					return <li>
-						<SvgLink href={el.href} iconId={el.svg} width='14' height='14' viewBox='0 0 14 14' />
-					</li>
+					return <SvgLink href={el.href} iconId={el.svg} width='14' height='14' viewBox='0 0 14 14' />
 				})
 			}
 		</StyledList>

@@ -6,6 +6,7 @@ import img3 from '../../../assets/images/portfolio/img-3.jpeg'
 import { Slider } from '../../../components/slider/Slider'
 import { YellowLink } from '../../../components/yellow-link/YellowLink'
 import {S} from './Blog_Styles'
+import { Fade } from 'react-awesome-reveal'
 
 const articleContent = [
 	{ src: img1, title: 'How to make web tempates', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna ' },
@@ -33,10 +34,12 @@ const blogItems = articleContent.map((a, i) => {
 export const Blog: React.FC = () => {
 
 	return (
-		<S.Blog>
+		<S.Blog id='blog'>
 			<SectionTitle>Blog</SectionTitle>
 			<SectionDescription>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum</SectionDescription>
-			<Slider items={blogItems} disableDotsControls={true} />
+			<Fade cascade>
+				<Slider items={blogItems} disableDotsControls={true} />
+			</Fade>
 		</S.Blog>
 	)
 }

@@ -1,6 +1,5 @@
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
-import styled from 'styled-components';
 import './../../styles/slider.css';
 
 type SliderPropsType = {
@@ -16,12 +15,12 @@ const responsive = {
 
 
 export const Slider: React.FC<SliderPropsType> = (props: SliderPropsType) => (
-		<AliceCarousel
-			mouseTracking
-			items={props.items}
-			responsive={responsive}
-			disableButtonsControls={true}
-			disableDotsControls= {props.disableDotsControls || false}
-		/>
+			<AliceCarousel
+				mouseTracking
+				items={props.items}
+				responsive={responsive}
+				disableButtonsControls={true}
+				disableDotsControls= {props.disableDotsControls || false}
+			/>
 );
 

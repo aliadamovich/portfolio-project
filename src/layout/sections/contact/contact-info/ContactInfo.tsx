@@ -26,9 +26,9 @@ export function ContactInfo() {
 			<SectionTitle>Contact information</SectionTitle>
 
 			{/* <ContactWrapper> */}
-				<ContactCard iconId='map' options={addressOptions} />
-				<ContactCard iconId='mail' options ={mailOptions}/>
-				<ContactCard iconId='mobile' options={phoneOptions} />
+			<ContactCard href={addressOptions[0].href} iconId='map' options={addressOptions} />
+			<ContactCard href={addressOptions[0].href} iconId='mail' options ={mailOptions}/>
+			<ContactCard href={addressOptions[0].href} iconId='mobile' options={phoneOptions} />
 			{/* </ContactWrapper> */}
 		</StyledInfo>
 	)

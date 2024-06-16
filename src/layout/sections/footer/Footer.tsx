@@ -3,6 +3,7 @@ import { Icon } from '../../../components/icon/Icon'
 import styled from 'styled-components'
 import { FlexWrapper } from '../../../components/FlexWrapper'
 import { theme } from '../../../styles/Theme'
+import { Link } from 'react-scroll'
 
 export function Footer() {
 	return (

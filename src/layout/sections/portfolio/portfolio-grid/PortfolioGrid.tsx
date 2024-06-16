@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components';
 import { theme } from '../../../../styles/Theme';
 import { GridWrapper } from '../../../../components/GridWrapper';
-
+import { Fade } from 'react-awesome-reveal';
+import { motion, AnimatePresence } from "framer-motion"
 
 
 
@@ -10,18 +11,29 @@ export const PortfolioGrid = (props: { portfolioWorks: {src: string, filter: str
 
 	return (
 		<GridWrapper>
-			{props.portfolioWorks.map((work, index) => {
-				return <GridItem key={index}>
+				<AnimatePresence>
+					{props.portfolioWorks.map((work, index) => {
+						return (
+							<Fade damping={0.2}>
+      					<GridItem 
+								key={index}
+								layout
+								initial={{ opacity: 0 }}
+								animate={{ opacity: 1 }}
+								exit={{ opacity: 0 }}>
 									<img src={work.src} alt="portfolio project" />
 								</GridItem>
-			}
-			)}
+						</Fade>
+						)})}
+					
+				</AnimatePresence>
+				
 		</GridWrapper>
 	)
 }
 
 
-const GridItem = styled.div`
+const GridItem = styled(motion.div)`
 	position: relative;
 	z-index: 0;
 	cursor: pointer;

@@ -13,23 +13,25 @@ export const GlobalStyles = createGlobalStyle`
 		background-color: ${theme.colors.accent}
 	}
 
+* {
+		scrollbar-width: thin; 
+		scrollbar-color: #cfcfcf #fff
+	}
+
 	*::-webkit-scrollbar {
-		width: 10px;
+		width: 8px;
 	}
 	*::-webkit-scrollbar-track {
-		background-color: ${theme.colors.headerBg};
+		background-color: #fff;
 
 	}
 	*::-webkit-scrollbar-thumb {
-		background-color: ${theme.colors.mainFont};
-		border: 3px solid ${theme.colors.mainBg};
+		background-color: #cfcfcf;
+		border: 2px solid #fff;
 		border-radius: 25px;
 	}
 
-	* {
-		scrollbar-width: thin; 
-		scrollbar-color: ${theme.colors.mainFont} ${theme.colors.mainBg}
-	}
+
 
 	body {
 		margin: 0;
@@ -42,6 +44,10 @@ export const GlobalStyles = createGlobalStyle`
 		background-color: ${theme.colors.mainBg};
 		color: ${theme.colors.mainFont};
 		min-width: 375px;
+
+		&.lock {
+			overflow: hidden;
+		}
 	}
 	
 	a {
