@@ -8,9 +8,10 @@ import hero3x from './../../../assets/images/hero@3.png';
 import { Button } from '../../../components/button/Button';
 import {S} from './Main_Styles';
 import Typewriter from 'typewriter-effect';
-
+import { Link } from 'react-scroll';
 
 export const Main: React.FC = () => {
+
 	return (
 		<S.MainSection id='home'>
 			<S.MainWrapper >
@@ -34,8 +35,10 @@ export const Main: React.FC = () => {
 						/>
 					</S.MainTitle>
 					<S.MainText>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat feugiat placerat lobortis. Natoque rutrum semper sed suspendisse nunc lectus.</S.MainText>
-					<Button text='HIRE ME' isIcon={true} iconId='arrow-right' width='11' height='11' viewBox='0 0 11 11' />
-				</S.MainContent>
+					<Link to='price' smooth={true}>
+						<Button text='HIRE ME' isIcon={true} iconId='arrow-right' width='11' height='11' viewBox='0 0 11 11' />
+					</Link>
+					</S.MainContent>
 				<S.MainImgWrapper >
 					<picture>
 						<source src={hero_webp} srcSet={`${hero2_webp} 2x, ${hero3_webp} 3x`} type='image/webp'/>

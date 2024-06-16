@@ -13,8 +13,8 @@ export const PortfolioTabs = (props: PortfolioTabsPropsType) => {
 	return (
 
 		<StyledPortfolioTabs>
-			{props.tabsData.map(tab => {
-				return <li>
+			{props.tabsData.map((tab, index) => {
+				return <li key={index}>
 								<TabButton active={tab.status === props.currentFilterStatus} 
 														onClick={() => { props.onTabClick(tab.status) }}>{tab.title}
 								</TabButton>

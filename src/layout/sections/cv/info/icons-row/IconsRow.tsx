@@ -9,8 +9,8 @@ export const IconsRow: React.FC<{ icons: { href: string, id: string, svg: string
 	return (
 		<StyledList>
 			{
-				props.icons.map(el => {
-					return <SvgLink href={el.href} iconId={el.svg} width='14' height='14' viewBox='0 0 14 14' />
+				props.icons.map((el, index) => {
+					return <SvgLink href={el.href} iconId={el.svg} width='14' height='14' viewBox='0 0 14 14' key={index} />
 				})
 			}
 		</StyledList>

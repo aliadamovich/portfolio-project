@@ -66,7 +66,7 @@ const priceItems = data.map(el => {
 })
 
 export const Price: React.FC = () => (
-	<StyledPriceSection>
+	<StyledPriceSection id='price'>
 		<SectionTitle>price plans</SectionTitle>
 		<SectionDescription>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum</SectionDescription>
 		<Fade cascade >

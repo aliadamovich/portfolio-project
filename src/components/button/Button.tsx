@@ -12,11 +12,15 @@ type ButtonPropsType = {
 	viewBox?: string
 	fill?: string
 	rounded?: boolean
+	onClick?: () => void
 }
 
 export const Button = (props: ButtonPropsType) => {
+
 	return (
-		<StyledButton rounded={props.rounded}>
+		<StyledButton 
+			onClick={ props.onClick }
+			rounded={props.rounded}>
 			<span>{props.text}</span>
 			{props.isIcon && <Icon iconId={props.iconId} 
 															height={props.height}

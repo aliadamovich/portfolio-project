@@ -3,9 +3,13 @@ import { Icon } from '../icon/Icon'
 import styled from 'styled-components'
 import { theme } from '../../styles/Theme'
 
-export const YellowLink = (props: {text: string}) => {
+export const YellowLink = (props: { text: string; onClick?: () => void}) => {
+	const onLinkClick = () => {
+		console.log(333)
+	}
+
 	return (
-		<Link href='#'>
+		<Link href='#' onClick={(e) => {e.preventDefault(); onLinkClick() }}>
 			<span>{props.text}</span>
 			<Icon iconId='link-right' width="18" height="18" viewBox="0 0 18 18" fill={theme.colors.accent} />
 		</Link>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Progress } from './progress/Progress'
 import styled, { css } from 'styled-components'
 import { Extra } from './extra/Extra'
@@ -12,12 +12,32 @@ const skills = [{ skill: 'Html', value: '90' }, { skill: 'CSS', value: '85' }, {
 const extra = ['Bootstrap, Materialize', 'Stylus, Sass, Less', 'Gulp, Webpack, Grunt', 'GIT Knowledge']
 
 export const Cv: React.FC = () => {
-
-	const [cvIsOpen, setCvIsOpen] = useState(false);
-	const onBurgerClick = () => { setCvIsOpen( !cvIsOpen ) }
 	
+	const scrollRef = useRef<HTMLDivElement>(null);
+	
+	const [cvIsOpen, setCvIsOpen] = useState(false);
+	const [cvScrolled, setIsScrolled] = useState(false);
+
+	useEffect( () => {
+		const element = scrollRef.current;
+		if (element) {
+			element.addEventListener('scroll', () => {
+				if (element.scrollTop > 15) {
+					setIsScrolled(true)
+				} else {
+					setIsScrolled(false)
+				}
+			})
+		}
+	}, [])
+	
+	const onBurgerClick = () => {
+		setCvIsOpen( !cvIsOpen );
+	}
+
+
 	return (
-		<Aside isOpen={cvIsOpen} onClick={ () => {setCvIsOpen(false)} }>
+		<Aside isOpen={cvIsOpen} onClick={(e) => {setCvIsOpen(false)} }>
 			<BurgerButton isOpen={cvIsOpen} 
 				onClick={(e) => {
 				e.stopPropagation();
@@ -25,7 +45,10 @@ export const Cv: React.FC = () => {
 			}}>
 				<span></span>
 			</BurgerButton>
-			<StyledCv isOpen={cvIsOpen}>
+			
+			<StyledCv ref={scrollRef} isScrolled={cvScrolled} isOpen={cvIsOpen} 
+			onClick={(e) => e.stopPropagation()}
+			>
 				<Info />
 				<Progress title='Languages' knowledge={languages} />
 				<Progress title='Skills' knowledge={skills} />
@@ -52,6 +75,7 @@ const Aside = styled.aside<{ isOpen: boolean }>`
 		transition: all 1s ease 0s;
 		opacity: 0;
 		visibility: hidden;
+		cursor: pointer;
 	}
 	${props => props.isOpen && css<{ isOpen: boolean }>`
 		&::before{
@@ -61,7 +85,7 @@ const Aside = styled.aside<{ isOpen: boolean }>`
 	`}
 `
 
-const StyledCv = styled.div<{isOpen: boolean}>`
+const StyledCv = styled.div<{ isOpen: boolean, isScrolled: boolean }>`
 	max-width: 305px;
 	width: 100%;
 	padding: 50px 45px 0px 40px;
@@ -80,13 +104,35 @@ const StyledCv = styled.div<{isOpen: boolean}>`
 		left: -100%;
 		z-index: 10001;
 
-		${props => props.isOpen && css<{ isOpen: boolean }>`
+		${props => props.isOpen && css<{ isOpen: boolean, isScrolled: boolean }>`
 			left: 0;
+			&::before{
+			content: '';
+				width: 295px;
+				height: 65px;
+				background-color: ${theme.colors.sectionsBg};
+				top: 0;
+				left: 0;
+				right: 0;
+				position: fixed;
+				transition: all 0.3s ease 0s;
+				transform: translateY(-100%);
+				z-index: 10002;
+			}
+
+			${props => props.isScrolled && css<{ isOpen: boolean, isScrolled: boolean }>`
+				&::before{
+					transform: translateY(0%);
+				}
 		`}
+	`}
 	};
 
 	@media ${theme.media.mobile} {
 		max-width: 100%;
+		&::before{
+			width: 100%;
+		}
 	}
 `
 
@@ -96,9 +142,9 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
 	width: 30px;
 	height: 18px;
 	top: 35px;
-	left: 30px;
+	left: 6%;
 	z-index: 10002;
-
+	
 	@media ${theme.media.smallScreen} {
 		display: block;
 	}

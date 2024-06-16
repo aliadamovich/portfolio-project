@@ -23,15 +23,15 @@ const tabsData: Array<{ title: string, status: 'all' | 'ui' | 'web' | 'logo' | '
 ];
 
 const portfolioWorks = [
-	{src: img1, filter: 'web'}, 
-	{src: img2, filter: 'ui'}, 
-	{src: img3, filter: 'branding'}, 
-	{src: img4, filter: 'logo'}, 
-	{src: img5, filter: 'web'}, 
-	{src: img6, filter: 'branding'}, 
-	{src: img7, filter: 'logo'}, 
-	{src: img8, filter: 'logo'}, 
-	{src: img9, filter: 'logo'}
+	{src: img1, filter: 'web', id: 1}, 
+	{src: img2, filter: 'ui', id:2}, 
+	{src: img3, filter: 'branding', id: 3}, 
+	{src: img4, filter: 'logo', id: 4}, 
+	{src: img5, filter: 'web', id: 5}, 
+	{src: img6, filter: 'branding', id: 6}, 
+	{src: img7, filter: 'logo', id: 7}, 
+	{src: img8, filter: 'logo', id: 8}, 
+	{src: img9, filter: 'logo', id: 9}
 ];
 
 export const Portfolio = () => {
@@ -63,3 +63,18 @@ export const Portfolio = () => {
 const StyledPortfolioSection = styled.section`
 	position: relative;
 `
+
+// const NewModal = styled.div`
+// 	padding: 0 15px;
+// 	cursor: auto;
+// 	position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background: rgba(50, 49, 49, 0.361);
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   z-index: 20000;	
+// `

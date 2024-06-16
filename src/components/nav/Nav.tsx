@@ -17,8 +17,7 @@ export const Nav: React.FC = () => {
 			<ul>
 				{
 					menuIconsData.map((el)=> {
-					return <>
-						<SvgLink 
+					return <SvgLink 
 														href={el.id}
 														secondary 
 														iconId={el.svg}
@@ -26,8 +25,7 @@ export const Nav: React.FC = () => {
 														fill='currentColor' 
 														name={el.name}
 														key={el.id}/>
-						{/* <S.ToolTip>{el.name}</S.ToolTip>  */}
-					</>
+
 				})
 				}
 			</ul>

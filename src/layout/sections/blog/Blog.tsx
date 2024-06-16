@@ -24,7 +24,7 @@ const blogItems = articleContent.map((a, i) => {
 				<S.Content>
 					<S.Title>{a.title}</S.Title>
 					<S.Text>{a.body}</S.Text>
-					<YellowLink text='learn more' />
+					<YellowLink text='learn more'/>
 				</S.Content>
 		</>
 		</S.BlogCardBody>

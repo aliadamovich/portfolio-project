@@ -22,11 +22,11 @@ export const Services: React.FC = () => {
 		<S.ServicesSection id='services'>
 			<SectionTitle>my services</SectionTitle>
 			<SectionDescription>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum</SectionDescription>
+			<Fade cascade damping={0.2}>
 				<GridWrapper >
-				<Fade cascade damping={0.2}>
 					{
-						servicesData.map(s=> {
-							return <S.CardBody >
+						servicesData.map((s, index) => {
+							return <S.CardBody key={index}>
 											<Icon iconId={s.icon} fill={theme.colors.accent} width='78' height='78' viewBox='0 0 78 78' />
 											<S.Title>{s.name}</S.Title>
 											<S.ServiceDescription>{s.description}</S.ServiceDescription>
@@ -34,8 +34,8 @@ export const Services: React.FC = () => {
 										</S.CardBody>
 						})
 					}
-					</Fade>
-				</GridWrapper>
+					</GridWrapper>
+				</Fade>
 		</S.ServicesSection>
 	)
 }

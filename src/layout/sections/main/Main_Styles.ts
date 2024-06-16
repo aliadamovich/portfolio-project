@@ -9,8 +9,13 @@ const MainSection = styled.section`
 	position: relative;
 	background: url(${bg_img}) ${theme.colors.sectionsBg} center no-repeat;
 
+	background-attachment: fixed;
+	background-position: 65% 7%;
+	
+
 	@media ${theme.media.mobile} {
 		background: url(${bg_img_mobile}) ${theme.colors.sectionsBg} center 60px no-repeat;
+		background-attachment: fixed;
 	}
 `
 const MainWrapper = styled.div`
@@ -26,7 +31,6 @@ const MainWrapper = styled.div`
 const MainContent = styled.div`
 	max-width: 525px;
 	padding: 95px 10px 20px 15px;
-
 	overflow-x: hidden;
 
 	@media ${theme.media.tablet} {
@@ -37,9 +41,6 @@ const MainContent = styled.div`
 	button {
 		height: 51px;
 		border-radius: 5px;
-		&:hover{
-			
-		}
 	}
 `
 
