@@ -25,11 +25,10 @@ export function ContactInfo() {
 		<StyledInfo>
 			<SectionTitle>Contact information</SectionTitle>
 
-			{/* <ContactWrapper> */}
 			<ContactCard href={addressOptions[0].href} iconId='map' options={addressOptions} />
 			<ContactCard href={addressOptions[0].href} iconId='mail' options ={mailOptions}/>
 			<ContactCard href={addressOptions[0].href} iconId='mobile' options={phoneOptions} />
-			{/* </ContactWrapper> */}
+
 		</StyledInfo>
 	)
 }
@@ -42,9 +41,3 @@ const StyledInfo = styled.div`
 	}
 `
 
-// const ContactWrapper = styled.div`
-// 	display: flex;
-// 	flex-direction: column;
-// 	width: 100%;
-	
-// `

@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 import { Extra } from './extra/Extra'
 import { Info } from './info/Info'
 import { Button } from '../../../components/button/Button'
-import { theme } from '../../../styles/Theme'
+// import { theme } from '../../../styles/Theme'
 import { CvContainer } from './CvContainer'
 
 const languages = [{ skill: 'Bangla', value: '100' }, { skill: 'English', value: '80' }, { skill: 'Spanish', value: '60' }]
@@ -89,7 +89,7 @@ const StyledCv = styled.div<{ isOpen: boolean, isScrolled: boolean }>`
 	max-width: 305px;
 	width: 100%;
 	padding: 50px 45px 0px 40px;
-	background-color: ${theme.colors.sectionsBg};
+	background-color: ${props => props.theme.colors.sectionsBg};
 	transition: all 0.3s ease 0s;
 	position: sticky;
 	height: 100vh;
@@ -98,7 +98,7 @@ const StyledCv = styled.div<{ isOpen: boolean, isScrolled: boolean }>`
 	top: 0;
 	left: 0;
 
-	@media ${theme.media.smallScreen} {
+	@media ${props => props.theme.media.smallScreen} {
 		position: absolute;
 		top: 0;
 		left: -100%;
@@ -110,7 +110,7 @@ const StyledCv = styled.div<{ isOpen: boolean, isScrolled: boolean }>`
 			content: '';
 				width: 295px;
 				height: 65px;
-				background-color: ${theme.colors.sectionsBg};
+				background-color: ${props => props.theme.colors.sectionsBg};
 				top: 0;
 				left: 0;
 				right: 0;
@@ -128,7 +128,7 @@ const StyledCv = styled.div<{ isOpen: boolean, isScrolled: boolean }>`
 	`}
 	};
 
-	@media ${theme.media.mobile} {
+	@media ${props => props.theme.media.mobile} {
 		max-width: 100%;
 		&::before{
 			width: 100%;
@@ -145,14 +145,14 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
 	left: 6%;
 	z-index: 10002;
 	
-	@media ${theme.media.smallScreen} {
+	@media ${props => props.theme.media.smallScreen} {
 		display: block;
 	}
 
 	span {
 		position: absolute;
 		display: block;
-		background-color: ${theme.colors.accent};
+		background-color: ${props => props.theme.colors.accent};
 		width: 100%;
 		height: 2px;
 		top: 7px;
@@ -161,7 +161,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
 		&::before{
 			content: '';
 			display:block;
-			background-color: ${theme.colors.accent};
+			background-color: ${props => props.theme.colors.accent};
 			width: 100%;
 			height: 2px;
 			position: absolute;
@@ -172,7 +172,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
 			content: '';
 			position: absolute;
 			display: block;
-			background-color: ${theme.colors.accent};
+			background-color: ${props => props.theme.colors.accent};
 			width: 100%;
 			height: 2px;
 			transform: translateY(10px);

@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { Period } from '../../../components/period/Period'
 import { SectionTitle } from '../../../components/SectionTitle'
 import { SectionDescription } from '../../../components/SectionDescription'
-import { theme } from '../../../styles/Theme'
 import { Fade } from "react-awesome-reveal";
 
 export function Work() {
@@ -45,6 +44,7 @@ const StyledWork = styled.section`
 
 
 const PeriodWrapper = styled.div`
-	background-color: ${theme.colors.sectionsBg};
+	background-color: ${props => props.theme.colors.sectionsBg};
 	padding: 17px 37px 20px 47px;
+
 `

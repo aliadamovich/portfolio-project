@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { FlexWrapper } from '../FlexWrapper'
 import { Label } from '../Label'
-import { theme } from '../../styles/Theme'
 
 type PeriodPropsType = {
 	placeTitle: string
@@ -35,7 +34,7 @@ const StyledPeriod = styled.div`
 	display: flex;
 	padding: 30px 0;
 	&:not(:last-child){
-		border-bottom: 1px solid ${theme.colors.iconBg};
+		border-bottom: 1px solid ${props => props.theme.colors.iconBg};
 	}
 
 	@media (max-width:1024px){
@@ -47,7 +46,7 @@ const PlaceColumn = styled.div`
 	padding-bottom: 15px;
 
 	${Label} {
-		color: ${theme.colors.sectionsBg};
+		color: ${props => props.theme.colors.sectionsBg};
 		font-size: 10px;
 	}
 `

@@ -2,7 +2,6 @@ import React from 'react'
 import { SectionTitle } from '../../../../components/SectionTitle'
 import styled from 'styled-components'
 import { Button } from '../../../../components/button/Button'
-import { theme } from '../../../../styles/Theme'
 
 export function ContactForm() {
 	return (
@@ -43,7 +42,7 @@ const StyledForm = styled.div`
 const Form = styled.form`
 	width: 100%;
 	min-width: 250px;
-	background-color: ${theme.colors.sectionsBg};
+	background-color: ${props => props.theme.colors.sectionsBg};
 	padding: 25px;
 	flex-grow: 1;
 
@@ -68,15 +67,15 @@ const StyledInput = styled.div`
 
 const Field = styled.input`
 	width: 100%;
-		background-color: ${theme.colors.mainBg};
+		background-color: ${props => props.theme.colors.mainBg};
 		border: none;
 		padding: 10px 15px;
 
-		color: ${theme.colors.boldFont};
+		color: ${props => props.theme.colors.boldFont};
 		font-family: 'Inter', sans-serif;
 		font-size: 18px;
 
 		&:focus-visible {
-			outline: 1px solid ${theme.colors.mainFont};
+			outline: 1px solid ${props => props.theme.colors.mainFont};
 		}
 `

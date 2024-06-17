@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { theme } from "../../styles/Theme"
+// import { theme } from "../../styles/Theme"
 
 //header
 
@@ -18,15 +18,15 @@ const Header = styled.header`
 	flex-direction: column;
 	gap: 40px;
 	gap: calc( (min(100vw,1440px) - 576px)/(1440 - 576) * (125 - 55) + 55px);
-	background-color: ${theme.colors.headerBg};
+	background-color: ${props => props.theme.colors.headerBg};
 	overflow-x: hidden;
 	overflow-y: auto;
 	
-	@media ${theme.media.first} {
+	@media ${props => props.theme.media.first} {
 		max-width: 75px;
 	}
 
-	@media ${theme.media.mobile} {
+	@media ${props => props.theme.media.mobile} {
 		flex-direction: row;
 		align-items: center;
 		justify-content: center;
@@ -43,13 +43,14 @@ const Header = styled.header`
 	}
 `
 
-const DarkMode = styled.button`
+const DarkMode = styled.button<{isDarkMode: boolean}>`
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	color: ${theme.colors.boldFont};
+	transition: all 1s ease 0s;
+	color: ${props => props.isDarkMode ? props.theme.colors.accent : props.theme.colors.boldFont};
 	&:hover{
-		color: ${theme.colors.accent};
+		color: ${props => props.isDarkMode ? props.theme.colors.accent : props.theme.colors.boldFont};
 	}
 `
 

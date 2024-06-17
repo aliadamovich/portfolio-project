@@ -3,8 +3,6 @@ import styled from 'styled-components'
 import { SectionTitle } from '../../../components/SectionTitle'
 import { SectionDescription } from '../../../components/SectionDescription'
 import { PriceCard } from './price-card/PriceCard'
-import { GridWrapper } from '../../../components/GridWrapper'
-import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { Slider } from '../../../components/slider/Slider'
 import { Fade } from "react-awesome-reveal";

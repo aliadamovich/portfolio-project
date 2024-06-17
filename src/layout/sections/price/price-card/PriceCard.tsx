@@ -1,8 +1,8 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
+import styled, { css, useTheme } from 'styled-components'
 import { Icon } from '../../../../components/icon/Icon'
-import { theme } from '../../../../styles/Theme'
 import { Button } from '../../../../components/button/Button'
+import { CustomTheme } from '../../../../styles/Theme'
 
 type PriceCardPropsType = {
 	rate: string
@@ -23,7 +23,7 @@ type PlanTitlePropsType = {
 
 
 export const PriceCard = (props: PriceCardPropsType) => {
-
+	const theme = useTheme() as CustomTheme;
 	return (
 		<StyledCard>
 			{<PopularLabel opacity={props.isPopular ? '1': '0'}>Most Popular</PopularLabel> }
@@ -55,7 +55,7 @@ export const PriceCard = (props: PriceCardPropsType) => {
 
 const StyledCard = styled.div`
 	position: relative;
-	background: #fff;
+	background: ${props => props.theme.colors.sectionsBg};
 	padding: 54px 30px 25px;
 	transition: all 0.3s ease 0s;
 	&:hover{
@@ -75,14 +75,14 @@ const Price = styled.div`
 	font-weight: 700;
 	line-height: 123.6%;
 	text-transform: capitalize;
-	color: ${theme.colors.boldFont};
+	color: ${props => props.theme.colors.boldFont};
 	margin: 19px 0 8px 0;
 	text-align: center;
 
 	span{
 		font-size: 15px;
 		line-height: 24px;
-		color: ${theme.colors.mainFont};
+		color: ${props => props.theme.colors.mainFont};
 	}
 `
 const Descriptopn = styled.p`
@@ -107,8 +107,8 @@ const PlanTitle = styled.span<PlanTitlePropsType>`
 `
 
 const PopularLabel = styled.span<PopularLabelPropsType>`
-	background-color: ${theme.colors.accent};
-	color: ${theme.colors.boldFont};
+	background-color: ${props => props.theme.colors.accent};
+	color: ${props => props.theme.colors.boldFont};
 	opacity: ${props => props.opacity};
 	position: absolute;
 	top: 0;

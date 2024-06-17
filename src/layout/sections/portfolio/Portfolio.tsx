@@ -63,18 +63,3 @@ export const Portfolio = () => {
 const StyledPortfolioSection = styled.section`
 	position: relative;
 `
-
-// const NewModal = styled.div`
-// 	padding: 0 15px;
-// 	cursor: auto;
-// 	position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   background: rgba(50, 49, 49, 0.361);
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   z-index: 20000;	
-// `

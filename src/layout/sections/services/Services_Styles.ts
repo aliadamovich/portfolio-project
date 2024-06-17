@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { theme } from "../../../styles/Theme"
+
 
 const ServicesSection = styled.section`
 	position: relative;
@@ -22,7 +22,7 @@ const ServiceDescription = styled.p`
 const CardBody = styled.div`
 	flex: 0 1 33.3%;
 	text-align: center;
-	background-color: ${theme.colors.sectionsBg};
+	background-color: ${props => props.theme.colors.sectionsBg};
 	padding: 25px 0 25px;
 	display: flex;
 	flex-direction: column;

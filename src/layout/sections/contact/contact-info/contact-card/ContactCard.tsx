@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Icon } from '../../../../../components/icon/Icon'
-import { theme } from '../../../../../styles/Theme';
 import { SvgLink } from '../../../../../components/svg-link/SvgLink';
 
 
@@ -30,7 +29,7 @@ export function ContactCard(props: ContactCardProps) {
 }
 
 const StyledCard = styled.ul`
-	background-color: ${theme.colors.sectionsBg};
+	background-color: ${props => props.theme.colors.sectionsBg};
 	padding: 25px 25px 16px;
 	text-align: center;
 	& + ul {
@@ -54,5 +53,5 @@ const Name = styled.span`
 	font-weight: 500;
 `
 const Value = styled.a`
-	color: ${theme.colors.mainFont};
+	color: ${props => props.theme.colors.mainFont};
 `

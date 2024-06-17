@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 import styled, { css } from 'styled-components'
 import { Icon } from '../icon/Icon'
-import { theme } from '../../styles/Theme'
+
 
 type ButtonPropsType = {
 	text?: string
@@ -32,9 +32,9 @@ export const Button = (props: ButtonPropsType) => {
 }
 
 const StyledButton = styled.button<ButtonPropsType>`
-	background: ${theme.colors.accent};
+	background: ${props => props.theme.colors.accent};
 	font-size: 14px;
-	color: ${theme.colors.boldFont};
+	color: ${props => props.theme.colors.boldFont};
 	font-weight: 600;
 	text-transform: uppercase;
 	height: 40px;
@@ -48,7 +48,7 @@ const StyledButton = styled.button<ButtonPropsType>`
 	}
 
 	&:hover{
-		color: ${theme.colors.mainBg};
+		color: ${props => props.theme.colors.mainBg};
 	}
 
 	${props => props.rounded && css<ButtonPropsType>`
@@ -56,11 +56,11 @@ const StyledButton = styled.button<ButtonPropsType>`
 		border-radius: 30px;
 		box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.15);
 		margin: 0px auto;
-		background-color: ${theme.colors.sectionsBg};
+		background-color: ${props => props.theme.colors.sectionsBg};
 
 		&:hover{
-			background-color: ${theme.colors.accent};
-			color: ${theme.colors.boldFont};
+			background-color: ${props => props.theme.colors.accent};
+			color: ${props => props.theme.colors.boldFont};
 		}
 	`}
 `

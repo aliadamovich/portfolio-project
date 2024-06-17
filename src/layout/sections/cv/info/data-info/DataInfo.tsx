@@ -1,7 +1,8 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Label } from '../../../../../components/Label'
-import { theme } from '../../../../../styles/Theme'
+import { color } from 'framer-motion'
+
 
 type DataInfoPropsType = {
 	data: { name: string, value: string, modified ?: boolean } []
@@ -40,5 +41,9 @@ const StyledDataItem = styled.div`
 `
 
 const Value = styled.span<ValuePropsType>`
-	color: ${props => props.modified ? '#7eb942' : theme.colors.boldFont};
+	color: ${props => props.theme.colors.boldFont};
+
+	 ${props => props.modified && css<ValuePropsType>`
+		color: #7eb942;
+	 `}
 `

@@ -121,7 +121,7 @@ padding: 0 30px;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(75, 75, 75, 0.475);
+  background: rgba(75, 75, 75, 0.202);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -130,7 +130,7 @@ padding: 0 30px;
 
 const PopupContent = styled.div`
 	position: relative;
-	background: white;
+	background: ${props => props.theme.colors.sectionsBg};
   padding: 40px 40px;
   border-radius: 10px;
   max-width: 500px;
@@ -157,7 +157,7 @@ const CloseButton = styled.button`
   border: none;
   font-size: 3rem;
   cursor: pointer;
-	background-color: ${theme.colors.accent};
+	background-color: ${props => props.theme.colors.accent};
 	border-radius: 50%; 
 	padding: 4px 13px 7px;
 	line-height: 1;
@@ -165,7 +165,6 @@ const CloseButton = styled.button`
 	transition: all 0.3s ease 0s;
 
 	&:hover{
-		background-color: #fff;
-		
+		background-color: ${props => props.theme.colors.sectionsBg};
 	}
 `

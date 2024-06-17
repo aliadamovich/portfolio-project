@@ -2,8 +2,7 @@ import React from 'react'
 import { Icon } from '../../../components/icon/Icon'
 import styled from 'styled-components'
 import { FlexWrapper } from '../../../components/FlexWrapper'
-import { theme } from '../../../styles/Theme'
-import { Link } from 'react-scroll'
+
 
 export function Footer() {
 	return (
@@ -33,12 +32,12 @@ const StyledFooter = styled.footer`
 			}
 	};
 
-	 @media ${theme.media.mobile} {
+	 @media ${props => props.theme.media.mobile} {
 		margin-top: 70px;
 	 }
 `
 const Copyright = styled.div`
-	background-color: ${theme.colors.sectionsBg};
+	background-color: ${props => props.theme.colors.sectionsBg};
 	display: flex;
 	align-items: center;
 	gap: 17px;
@@ -46,11 +45,11 @@ const Copyright = styled.div`
 	padding: 14px 10px;
 	margin-top: 95px;
 
-	@media ${theme.media.mobile} {
+	@media ${props => props.theme.media.mobile} {
 		margin-top: 70px;
 	 }
 `
 
 const Small = styled.small`
-	color: ${theme.colors.boldFont};
+	color: ${props => props.theme.colors.boldFont};
 `

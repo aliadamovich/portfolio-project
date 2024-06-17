@@ -1,6 +1,5 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { theme } from '../../../../styles/Theme'
 
 type PortfolioTabsPropsType = {
 	tabsData: Array<{ title: string, status: 'all' | 'ui' | 'web' | 'logo' | 'branding' }>
@@ -28,11 +27,11 @@ const TabButton = styled.button<{active: boolean}>`
 	transition: all 0.3s ease 0s;
 	font-size: 18px;
 	font-weight: 500;
-	color: ${theme.colors.boldFont};
+	color: ${props => props.theme.colors.boldFont};
 	line-height: 2;
 
 	${props => props.active && css<{ active: boolean }>`
-	color: ${ theme.colors.accent };
+	color: ${ props => props.theme.colors.accent };
 	`}
 `
 
@@ -46,14 +45,14 @@ const StyledPortfolioTabs = styled.ul`
 		display: inline-block;
 		&:hover{
 			${TabButton} {
-				color: ${theme.colors.accent};
+				color: ${props => props.theme.colors.accent};
 			}
 		}
 	
 	& + li {
 			margin-left: 37px;
 
-			@media ${theme.media.tablet} {
+			@media ${props => props.theme.media.tablet} {
 				margin-left: 50px;
 			}
 		}

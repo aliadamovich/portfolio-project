@@ -1,11 +1,10 @@
 import styled from "styled-components"
-import { theme } from "../../../styles/Theme"
 
 const Blog = styled.section`
 `
 
 const BlogCardBody = styled.article`
-	background-color: ${theme.colors.sectionsBg};
+	background-color: ${props => props.theme.colors.sectionsBg};
 	transition: all 0.3s ease 0s;
 
 	&:hover{

@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { theme } from "../../styles/Theme"
+
 
 //tooltip
 
@@ -7,8 +7,8 @@ const ToolTip = styled.span`
 	display: inline-block;
 	font-size: 15px;
 	font-weight: 500;
-	color: ${theme.colors.sectionsBg};
-	background-color: ${theme.colors.boldFont};
+	color: ${props => props.theme.colors.sectionsBg};
+	background-color: ${props => props.theme.colors.boldFont};
 	height: 24px;
 	padding: 2px 10px;
 	position: absolute;
@@ -22,7 +22,7 @@ const ToolTip = styled.span`
 	&::after{
 		content: '';
 		display: inline-block;
-		border-top: 10px solid ${theme.colors.boldFont};
+		border-top: 10px solid ${props => props.theme.colors.boldFont};
 		border-right: 5px solid transparent;
 		border-left: 5px solid transparent;
 		position: absolute;
@@ -31,7 +31,7 @@ const ToolTip = styled.span`
 		transform: translateX(-50%);
 	}
 
-	@media ${theme.media.mobile} {
+	@media ${props => props.theme.media.mobile} {
 		display: none;
 	}
 `
@@ -59,7 +59,7 @@ const Menu = styled.nav`
 			}
 		}
 
-		@media ${theme.media.mobile} {
+		@media ${props => props.theme.media.mobile} {
 		flex-direction: row;
 		gap: 10px;
 	}

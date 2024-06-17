@@ -43,6 +43,6 @@ const StyledEducation = styled.section`
 `
 
 const PeriodWrapper = styled.div`
-	background-color: ${theme.colors.sectionsBg};
+	background-color: ${props => props.theme.colors.sectionsBg};
 	padding: 17px 37px 20px 47px;
 `

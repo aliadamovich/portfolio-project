@@ -1,13 +1,10 @@
 .alice-carousel__stage {
 	margin: 0 -10px;
-	/* display: grid;
-	grid-auto-flow: column; */
+
 }
 .alice-carousel__stage-item {
 	padding: 0 10px;
-	/* display: grid;
-		grid-auto-flow: row;
-		grid-template: auto 1fr auto auto / 1fr; */
+
 }
 
 

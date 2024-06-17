@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import { Icon } from '../icon/Icon'
-import { theme } from '../../styles/Theme'
+
 import { Link as ScrollLink } from 'react-scroll';
 import { S } from './../../components/nav/Nav_Styles';
 type SvgLinkPropsType = {
@@ -44,21 +44,21 @@ const LinkItem = styled.li<LinkPropsType>`
 
 	${props => props.secondary && css`
 		${NavLink} {
-			background-color: ${theme.colors.iconBg};
+			background-color: ${props => props.theme.colors.iconBg};
 			padding: 11px;
-			color: ${theme.colors.mainFont};
+			color: ${props => props.theme.colors.mainFont};
 
 			&:hover, 
 			&.active {
-				background-color: ${theme.colors.accent};
-				color: ${theme.colors.boldFont};
+				background-color: ${props => props.theme.colors.accent};
+				color: ${props => props.theme.colors.boldFont};
 			}
 		}
 	`}
 `
 const NavLink = styled(ScrollLink)`
-	background-color: ${theme.colors.accent};
-	color: ${theme.colors.boldFont};
+	background-color: ${props => props.theme.colors.accent};
+	color: ${props => props.theme.colors.boldFont};
 	border-radius: 50%;
 	padding: 6px;
 	display: inline-flex;
@@ -67,6 +67,6 @@ const NavLink = styled(ScrollLink)`
 	transition: all 0.2s ease 0s;
 	cursor: pointer;
 	&:hover{
-		background-color: ${theme.colors.iconBg};
+		background-color: ${props => props.theme.colors.iconBg};
 	}
 `

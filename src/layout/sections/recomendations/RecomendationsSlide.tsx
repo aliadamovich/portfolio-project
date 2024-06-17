@@ -1,7 +1,6 @@
 import React from 'react'
 import { Icon } from '../../../components/icon/Icon'
 import styled from 'styled-components'
-import { theme } from '../../../styles/Theme'
 
 type SlidePropsType = {
 	title: string
@@ -19,7 +18,7 @@ export const RecomendationsSlide: React.FC<SlidePropsType> = (props: SlidePropsT
 			<Rating>
 				{
 					[...Array(props.rating)].map((_, i) =>
-						<Icon iconId='star' width='18' height='18' viewBox='0 0 18 18' fill={theme.colors.accent} key={i} />
+						<Icon iconId='star' width='18' height='18' viewBox='0 0 18 18' fill='#ffb400' key={i} />
 					)
 				}
 			</Rating>
@@ -37,7 +36,7 @@ export const RecomendationsSlide: React.FC<SlidePropsType> = (props: SlidePropsT
 }
 
 const SlideBody = styled.div`
-	background-color: ${theme.colors.sectionsBg};
+	background-color: ${props => props.theme.colors.sectionsBg};
 	padding: 25px;
 `
 
@@ -62,6 +61,10 @@ const Person = styled.div`
 	display: flex;
 	gap: 13px;
 	align-items: center;
+	img {
+		border-radius: 50%;
+		overflow: hidden;
+	}
 `
 const PersonWrapper = styled.div`
 	h3 {

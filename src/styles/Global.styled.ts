@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-import { theme } from "./Theme";
+import { CustomTheme } from "./Theme";
+// import { theme } from "./Theme";
 
 export const GlobalStyles = createGlobalStyle`
 	*,
@@ -10,24 +11,24 @@ export const GlobalStyles = createGlobalStyle`
 		box-sizing: border-box;
 	}
 	*::selection {
-		background-color: ${theme.colors.accent}
+		background-color: ${props => (props.theme as CustomTheme).colors.accent}
 	}
 
 * {
 		scrollbar-width: thin; 
-		scrollbar-color: #cfcfcf #fff
+		scrollbar-color: ${props => (props.theme as CustomTheme).colors.scroll} ${props => (props.theme as CustomTheme).colors.mainBg}
 	}
 
 	*::-webkit-scrollbar {
 		width: 8px;
 	}
 	*::-webkit-scrollbar-track {
-		background-color: #fff;
+		background-color: ${props => (props.theme as CustomTheme).colors.mainBg};
 
 	}
 	*::-webkit-scrollbar-thumb {
-		background-color: #cfcfcf;
-		border: 2px solid #fff;
+		background-color: ${props => (props.theme as CustomTheme).colors.scroll};
+		border: 2px solid ${props => (props.theme as CustomTheme).colors.mainBg};
 		border-radius: 25px;
 	}
 
@@ -41,8 +42,8 @@ export const GlobalStyles = createGlobalStyle`
 		font-size: 15px;
 		font-weight: 400;
 		line-height: 160%;
-		background-color: ${theme.colors.mainBg};
-		color: ${theme.colors.mainFont};
+		background-color: ${props => (props.theme as CustomTheme).colors.mainBg};
+		color: ${props => (props.theme as CustomTheme).colors.mainFont};
 		min-width: 375px;
 
 		&.lock {
@@ -74,7 +75,7 @@ export const GlobalStyles = createGlobalStyle`
 		font-weight: 500;
 		line-height: 123%;
 		text-transform: capitalize;
-		color: ${theme.colors.boldFont};
+		color: ${props => (props.theme as CustomTheme).colors.boldFont};
 		margin-bottom: 15px;
 	}
 	
@@ -83,4 +84,5 @@ export const GlobalStyles = createGlobalStyle`
 	textarea {
 		font-family: inherit;
 	}
+
 `
