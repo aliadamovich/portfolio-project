@@ -88,7 +88,7 @@ const Aside = styled.aside<{ isOpen: boolean }>`
 const StyledCv = styled.div<{ isOpen: boolean, isScrolled: boolean }>`
 	max-width: 305px;
 	width: 100%;
-	padding: 50px 45px 0px 40px;
+	padding: 50px 45px 50px 40px;
 	background-color: ${props => props.theme.colors.sectionsBg};
 	transition: all 0.3s ease 0s;
 	position: sticky;
